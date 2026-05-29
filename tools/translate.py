@@ -3,19 +3,18 @@
 vibe-glossary translate — 领域术语翻译工具
 
 用法:
-    python translate.py "这个接口延迟太高了" --from software-engineering --to natural-language
+    python translate.py "你这个后端交互逻辑应该是解耦的"
     python translate.py "我们需要做 MVP 验证" --from product --to software-engineering
     python translate.py "CI/CD 挂了" --lang zh
+    python translate.py --interactive
 """
 
 import argparse
 import json
-import os
 import re
 import sys
 from pathlib import Path
 
-# 项目根目录
 ROOT = Path(__file__).parent.parent
 DOMAINS_DIR = ROOT / "domains"
 CONFIG_DIR = ROOT / "config"
@@ -54,109 +53,214 @@ def load_primary_domain() -> dict:
     return {"primary": "software-engineering", "fallback": "natural-language"}
 
 
-def find_matching_terms(text: str, terms: list[dict]) -> list[dict]:
-    """在文本中匹配术语（精确匹配 term 和 aliases）"""
-    matches = []
-    text_lower = text.lower()
-
+def _build_search_index(terms: list[dict]) -> list[tuple[str, dict, int]]:
+    """构建搜索索引：(关键词, 术语数据, 关键词长度)，按长度降序排列避免子串误匹配"""
+    index = []
     for term_data in terms:
-        # 检查主术语
-        if term_data["term"].lower() in text_lower:
-            matches.append(term_data)
-            continue
-
-        # 检查别名
+        # 主术语
+        index.append((term_data["term"], term_data, len(term_data["term"])))
+        # 别名
         for alias in term_data.get("aliases", []):
-            if alias.lower() in text_lower:
-                matches.append(term_data)
+            index.append((alias, term_data, len(alias)))
+    # 按长度降序，优先匹配更长的术语
+    index.sort(key=lambda x: -x[2])
+    return index
+
+
+def match_terms_in_text(text: str, terms: list[dict]) -> list[dict]:
+    """
+    在文本中匹配术语，返回匹配结果列表，每个包含:
+    - term_data: 术语数据
+    - matched_text: 在原文中匹配到的文本
+    - start: 起始位置
+    - end: 结束位置
+    """
+    index = _build_search_index(terms)
+    results = []
+    used_ranges = []  # 已匹配的范围，避免重叠
+
+    for keyword, term_data, kw_len in index:
+        # 在文本中搜索所有出现位置
+        search_text = text.lower()
+        keyword_lower = keyword.lower()
+        pos = 0
+        while True:
+            idx = search_text.find(keyword_lower, pos)
+            if idx == -1:
                 break
+            end = idx + kw_len
 
-    return matches
-
-
-def get_translation(term_data: dict, target_lang: str) -> str:
-    """获取术语的翻译"""
-    definition = term_data.get("definition", {})
-    if target_lang in definition:
-        return definition[target_lang]
-    # fallback 到英文
-    return definition.get("en", term_data["term"])
-
-
-def get_hint(term_data: dict) -> str:
-    """获取术语的模型提示"""
-    hints = term_data.get("model_hints", {})
-    return hints.get("prompt_fragment", "")
-
-
-def translate_text(text: str, source_domain: str, target_domain: str, output_lang: str = "en") -> str:
-    """翻译文本中的术语"""
-    # 加载源领域和目标领域的术语
-    source_terms = load_terms(source_domain)
-    target_terms = load_terms(target_domain)
-
-    # 在源领域中匹配术语
-    matches = find_matching_terms(text, source_terms)
-
-    if not matches:
-        return f"未在 '{source_domain}' 领域中找到匹配的术语。\n原文: {text}"
-
-    # 构建翻译结果
-    result_parts = []
-    result_parts.append(f"原文: {text}")
-    result_parts.append(f"领域: {source_domain} → {target_domain}")
-    result_parts.append("")
-
-    for match in matches:
-        term = match["term"]
-        definition_zh = match["definition"].get("zh", "")
-        definition_en = match["definition"].get("en", "")
-        hint = get_hint(match)
-
-        result_parts.append(f"  术语: {term}")
-        if definition_zh:
-            result_parts.append(f"  中文: {definition_zh}")
-        if definition_en:
-            result_parts.append(f"  英文: {definition_en}")
-        if hint:
-            result_parts.append(f"  提示: {hint}")
-
-        # 查找目标领域中的关联术语
-        related = match.get("related", [])
-        cross_domain_related = []
-        for rel in related:
-            for target_term in target_terms:
-                if rel.lower() == target_term["term"].lower() or rel in target_term.get("aliases", []):
-                    cross_domain_related.append(target_term)
+            # 检查是否与已有匹配重叠
+            overlaps = False
+            for (us, ue) in used_ranges:
+                if idx < ue and end > us:
+                    overlaps = True
                     break
 
-        if cross_domain_related:
-            result_parts.append(f"  关联 ({target_domain}):")
-            for related_term in cross_domain_related:
-                result_parts.append(f"    - {related_term['term']}: {get_translation(related_term, output_lang)}")
+            if not overlaps:
+                results.append({
+                    "term_data": term_data,
+                    "matched_text": text[idx:end],
+                    "start": idx,
+                    "end": end,
+                })
+                used_ranges.append((idx, end))
 
-        result_parts.append("")
+            pos = idx + 1
 
-    return "\n".join(result_parts)
+    # 按位置排序
+    results.sort(key=lambda r: r["start"])
+    return results
+
+
+def get_term_label(term_data: dict, lang: str = "en") -> str:
+    """获取术语的翻译标签（用于替换）"""
+    if lang == "en":
+        return term_data["term"]
+    elif lang == "zh":
+        return term_data["definition"].get("zh", term_data["term"])
+    return term_data["term"]
+
+
+def build_translated_sentence(text: str, matches: list[dict], target_lang: str) -> str:
+    """在整句中将匹配的术语替换为目标语言版本"""
+    if not matches:
+        return text
+
+    result = []
+    last_end = 0
+
+    for m in matches:
+        start, end = m["start"], m["end"]
+        # 添加匹配前的原文
+        result.append(text[last_end:start])
+        # 添加翻译后的术语（用 → 标注）
+        label = get_term_label(m["term_data"], target_lang)
+        result.append(label)
+        last_end = end
+
+    # 添加剩余原文
+    result.append(text[last_end:])
+    return "".join(result)
+
+
+def build_annotated_sentence(text: str, matches: list[dict], target_lang: str) -> str:
+    """构建带注释的翻译句子：原文术语 → 目标语言术语"""
+    if not matches:
+        return text
+
+    result = []
+    last_end = 0
+
+    for m in matches:
+        start, end = m["start"], m["end"]
+        # 添加匹配前的原文
+        result.append(text[last_end:start])
+        # 添加带注释的术语
+        original = m["matched_text"]
+        translated = get_term_label(m["term_data"], target_lang)
+        if original.lower() != translated.lower():
+            result.append(f"{original} → {translated}")
+        else:
+            result.append(original)
+        last_end = end
+
+    # 添加剩余原文
+    result.append(text[last_end:])
+    return "".join(result)
+
+
+def format_translation(text: str, matches: list[dict], source_domain: str,
+                       target_domain: str, target_lang: str) -> str:
+    """格式化完整的翻译输出"""
+    if not matches:
+        return f"原文: {text}\n\n⚠️  未在 '{source_domain}' 领域中找到匹配的术语。"
+
+    lines = []
+
+    # 1. 翻译后的句子
+    translated = build_translated_sentence(text, matches, target_lang)
+    lines.append(f"翻译: {translated}")
+    lines.append("")
+
+    # 2. 带注释的版本
+    annotated = build_annotated_sentence(text, matches, target_lang)
+    lines.append(f"注释: {annotated}")
+    lines.append("")
+
+    # 3. 术语详解
+    lines.append("─── 术语详解 ───")
+    for m in matches:
+        td = m["term_data"]
+        term = td["term"]
+        zh_def = td["definition"].get("zh", "")
+        en_def = td["definition"].get("en", "")
+        hint = td.get("model_hints", {}).get("prompt_fragment", "")
+
+        lines.append(f"  {term}")
+        if zh_def:
+            lines.append(f"    中文: {zh_def}")
+        if en_def:
+            lines.append(f"    英文: {en_def}")
+        if hint:
+            lines.append(f"    提示: {hint}")
+
+        # 示例
+        examples = td.get("examples", [])
+        if examples:
+            ex = examples[0]
+            lines.append(f"    示例: \"{ex['context']}\" → {ex['meaning']}")
+
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+def translate_text(text: str, source_domain: str, target_domain: str,
+                   output_lang: str = "en", all_domains: bool = False) -> str:
+    """翻译文本中的术语"""
+    if all_domains:
+        # 在所有领域中匹配
+        all_terms_data = load_all_terms()
+        all_matches = []
+        seen_terms = set()
+        for domain_name, terms in all_terms_data.items():
+            matches = match_terms_in_text(text, terms)
+            for m in matches:
+                term_key = m["term_data"]["term"]
+                if term_key not in seen_terms:
+                    seen_terms.add(term_key)
+                    m["source_domain"] = domain_name
+                    all_matches.append(m)
+        all_matches.sort(key=lambda r: r["start"])
+        return format_translation(text, all_matches, "all", target_domain, output_lang)
+    else:
+        source_terms = load_terms(source_domain)
+        matches = match_terms_in_text(text, source_terms)
+        return format_translation(text, matches, source_domain, target_domain, output_lang)
 
 
 def interactive_mode():
     """交互模式"""
-    print("vibe-glossary 交互翻译模式")
-    print("输入 'quit' 或 'exit' 退出")
+    print("╔══════════════════════════════════════╗")
+    print("║   vibe-glossary 交互翻译模式        ║")
+    print("║   输入 'quit' 退出                  ║")
+    print("╚══════════════════════════════════════╝")
     print()
 
     config = load_primary_domain()
     primary = config.get("primary", "software-engineering")
     fallback = config.get("fallback", "natural-language")
 
-    print(f"主领域: {primary}")
-    print(f"Fallback: {fallback}")
+    print(f"主领域: {primary}  |  Fallback: {fallback}")
+    print(f"提示: 输入 /all 可切换为全领域匹配模式")
     print()
+
+    all_domains = False
 
     while True:
         try:
-            text = input("请输入要翻译的内容: ").strip()
+            text = input("📝 ").strip()
         except (EOFError, KeyboardInterrupt):
             print("\n再见！")
             break
@@ -165,14 +269,20 @@ def interactive_mode():
             print("再见！")
             break
 
+        if text == "/all":
+            all_domains = not all_domains
+            state = "开启" if all_domains else "关闭"
+            print(f"  全领域匹配模式: {state}")
+            print()
+            continue
+
         if not text:
             continue
 
-        # 尝试在主领域中匹配
-        result = translate_text(text, primary, fallback)
+        result = translate_text(text, primary, fallback, all_domains=all_domains)
         print()
         print(result)
-        print("-" * 50)
+        print("─" * 50)
 
 
 def main():
@@ -181,22 +291,27 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
-  python translate.py "这个接口延迟太高了" --from software-engineering --to natural-language
-  python translate.py "我们需要做 MVP 验证" --from product --to software-engineering
+  python translate.py "你这个后端交互逻辑应该是解耦的"
+  python translate.py "我们需要做 MVP 验证" --from product
+  python translate.py --all "加个缓存优化一下转化率"
   python translate.py --interactive
         """
     )
     parser.add_argument("text", nargs="?", help="要翻译的文本")
-    parser.add_argument("--from", dest="source", help="源领域 (默认: 使用 primary-domain.json)")
-    parser.add_argument("--to", dest="target", help="目标领域 (默认: 使用 primary-domain.json)")
-    parser.add_argument("--lang", default="en", choices=["en", "zh"], help="输出语言 (默认: en)")
-    parser.add_argument("--interactive", "-i", action="store_true", help="交互模式")
-    parser.add_argument("--list-domains", action="store_true", help="列出所有可用领域")
+    parser.add_argument("--from", dest="source", help="源领域 (默认: primary-domain.json)")
+    parser.add_argument("--to", dest="target", help="目标领域 (默认: primary-domain.json)")
+    parser.add_argument("--lang", default="en", choices=["en", "zh"],
+                        help="目标语言 (默认: en)")
+    parser.add_argument("--all", action="store_true",
+                        help="在所有领域中匹配术语")
+    parser.add_argument("--interactive", "-i", action="store_true",
+                        help="交互模式")
+    parser.add_argument("--list-domains", action="store_true",
+                        help="列出所有可用领域")
     parser.add_argument("--list-terms", help="列出指定领域的所有术语")
 
     args = parser.parse_args()
 
-    # 列出领域
     if args.list_domains:
         print("可用领域:")
         for domain_dir in sorted(DOMAINS_DIR.iterdir()):
@@ -209,7 +324,6 @@ def main():
                     print(f"  {domain_dir.name} ({count} 个术语)")
         return
 
-    # 列出术语
     if args.list_terms:
         terms = load_terms(args.list_terms)
         print(f"{args.list_terms} 领域的术语:")
@@ -222,12 +336,10 @@ def main():
             print()
         return
 
-    # 交互模式
     if args.interactive:
         interactive_mode()
         return
 
-    # 翻译模式
     if not args.text:
         parser.print_help()
         sys.exit(1)
@@ -236,7 +348,7 @@ def main():
     source = args.source or config.get("primary", "software-engineering")
     target = args.target or config.get("fallback", "natural-language")
 
-    result = translate_text(args.text, source, target, args.lang)
+    result = translate_text(args.text, source, target, args.lang, args.all)
     print(result)
 
 

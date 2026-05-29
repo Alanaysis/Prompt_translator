@@ -39,13 +39,19 @@
   "terms": [
     {
       "term": "中英文混用",
-      "aliases": ["Chinglish in tech", "中英夹杂"],
+      "aliases": [
+        "Chinglish in tech",
+        "中英夹杂"
+      ],
       "definition": {
         "en": "The common practice in Chinese tech communities of mixing Chinese and English in technical communication",
         "zh": "中文技术社区中常见的中英文混合交流方式"
       },
       "domain": "natural-language",
-      "related": ["术语一致性", "context-switching"],
+      "related": [
+        "术语一致性",
+        "context-switching"
+      ],
       "examples": [
         {
           "context": "这个 component 的 state 管理用 Redux 还是 Zustand？",
@@ -63,13 +69,20 @@
     },
     {
       "term": "术语一致性",
-      "aliases": ["terminology consistency", "术语统一"],
+      "aliases": [
+        "terminology consistency",
+        "术语统一"
+      ],
       "definition": {
         "en": "Using the same term consistently throughout a project to avoid confusion (e.g., don't mix 'user' and 'account' for the same concept)",
         "zh": "在项目中一致使用相同术语以避免混淆（例如，不要混用'用户'和'账号'来指同一概念）"
       },
       "domain": "natural-language",
-      "related": ["ubiquitous-language", "DDD", "glossary"],
+      "related": [
+        "ubiquitous-language",
+        "DDD",
+        "glossary"
+      ],
       "examples": [
         {
           "context": "代码里叫 user，文档里叫 account，到底叫什么？",
@@ -83,13 +96,21 @@
     },
     {
       "term": "Context Window",
-      "aliases": ["上下文窗口", "上下文长度", "Context Length"],
+      "aliases": [
+        "上下文窗口",
+        "上下文长度",
+        "Context Length"
+      ],
       "definition": {
         "en": "The maximum amount of text (in tokens) an LLM can process in a single conversation turn",
         "zh": "LLM 在单次对话轮次中能处理的最大文本量（以 token 计）"
       },
       "domain": "natural-language",
-      "related": ["token", "prompt-engineering", "memory"],
+      "related": [
+        "token",
+        "prompt-engineering",
+        "memory"
+      ],
       "examples": [
         {
           "context": "上下文窗口不够了",
@@ -103,13 +124,21 @@
     },
     {
       "term": "Prompt Engineering",
-      "aliases": ["提示词工程", "提示工程", "Prompt"],
+      "aliases": [
+        "提示词工程",
+        "提示工程",
+        "Prompt"
+      ],
       "definition": {
         "en": "The practice of crafting effective prompts to get desired outputs from LLMs",
         "zh": "设计有效提示词以从 LLM 获得期望输出的实践"
       },
       "domain": "natural-language",
-      "related": ["few-shot", "chain-of-thought", "system-prompt"],
+      "related": [
+        "few-shot",
+        "chain-of-thought",
+        "system-prompt"
+      ],
       "examples": [
         {
           "context": "需要优化一下 prompt",
@@ -123,13 +152,21 @@
     },
     {
       "term": "Few-shot",
-      "aliases": ["少样本", "少样本学习", "Few-shot Learning"],
+      "aliases": [
+        "少样本",
+        "少样本学习",
+        "Few-shot Learning"
+      ],
       "definition": {
         "en": "Providing a few examples in the prompt to guide the model's output format and style",
         "zh": "在提示词中提供少量示例来引导模型的输出格式和风格"
       },
       "domain": "natural-language",
-      "related": ["zero-shot", "one-shot", "prompt-engineering"],
+      "related": [
+        "zero-shot",
+        "one-shot",
+        "prompt-engineering"
+      ],
       "examples": [
         {
           "context": "用 few-shot 的方式给几个例子",
@@ -143,13 +180,21 @@
     },
     {
       "term": "Hallucination",
-      "aliases": ["幻觉", "AI 幻觉", "胡说八道"],
+      "aliases": [
+        "幻觉",
+        "AI 幻觉",
+        "胡说八道"
+      ],
       "definition": {
         "en": "When an LLM generates plausible-sounding but factually incorrect or fabricated information",
         "zh": "LLM 生成听起来合理但实际上不正确或捏造的信息"
       },
       "domain": "natural-language",
-      "related": ["grounding", "fact-checking", "reliability"],
+      "related": [
+        "grounding",
+        "fact-checking",
+        "reliability"
+      ],
       "examples": [
         {
           "context": "AI 在幻觉",
@@ -163,13 +208,21 @@
     },
     {
       "term": "Grounding",
-      "aliases": ["接地", "事实锚定", "基于事实"],
+      "aliases": [
+        "接地",
+        "事实锚定",
+        "基于事实"
+      ],
       "definition": {
         "en": "Connecting LLM outputs to verified, real-world data sources to reduce hallucination",
         "zh": "将 LLM 输出连接到经过验证的真实数据源，以减少幻觉"
       },
       "domain": "natural-language",
-      "related": ["RAG", "hallucination", "fact-checking"],
+      "related": [
+        "RAG",
+        "hallucination",
+        "fact-checking"
+      ],
       "examples": [
         {
           "context": "需要 grounding 一下",
@@ -183,13 +236,20 @@
     },
     {
       "term": "RAG",
-      "aliases": ["检索增强生成", "Retrieval-Augmented Generation"],
+      "aliases": [
+        "检索增强生成",
+        "Retrieval-Augmented Generation"
+      ],
       "definition": {
         "en": "A technique that combines LLM generation with information retrieval from external knowledge bases",
         "zh": "将 LLM 生成与从外部知识库检索信息相结合的技术"
       },
       "domain": "natural-language",
-      "related": ["grounding", "vector-database", "embedding"],
+      "related": [
+        "grounding",
+        "vector-database",
+        "embedding"
+      ],
       "examples": [
         {
           "context": "用 RAG 接入知识库",
@@ -203,13 +263,20 @@
     },
     {
       "term": "Token",
-      "aliases": ["词元", "Token"],
+      "aliases": [
+        "词元",
+        "Token"
+      ],
       "definition": {
         "en": "The basic unit of text processing in LLMs, roughly 3/4 of a word in English or 1-2 characters in Chinese",
         "zh": "LLM 文本处理的基本单位，英文约 3/4 个单词，中文约 1-2 个字符"
       },
       "domain": "natural-language",
-      "related": ["context-window", "pricing", "tokenizer"],
+      "related": [
+        "context-window",
+        "pricing",
+        "tokenizer"
+      ],
       "examples": [
         {
           "context": "这个 prompt 多少 token？",
@@ -223,13 +290,20 @@
     },
     {
       "term": "Temperature",
-      "aliases": ["温度", "随机性"],
+      "aliases": [
+        "温度",
+        "随机性"
+      ],
       "definition": {
         "en": "A parameter controlling the randomness of LLM output. Lower = more deterministic, Higher = more creative",
         "zh": "控制 LLM 输出随机性的参数。越低越确定，越高越有创造性"
       },
       "domain": "natural-language",
-      "related": ["top-p", "sampling", "creativity"],
+      "related": [
+        "top-p",
+        "sampling",
+        "creativity"
+      ],
       "examples": [
         {
           "context": "temperature 调低一点",
@@ -243,13 +317,21 @@
     },
     {
       "term": "System Prompt",
-      "aliases": ["系统提示词", "系统指令", "System Message"],
+      "aliases": [
+        "系统提示词",
+        "系统指令",
+        "System Message"
+      ],
       "definition": {
         "en": "A special instruction given to an LLM before the conversation starts, defining its behavior, persona, and constraints",
         "zh": "在对话开始前给 LLM 的特殊指令，定义其行为、角色和约束"
       },
       "domain": "natural-language",
-      "related": ["prompt-engineering", "persona", "guardrails"],
+      "related": [
+        "prompt-engineering",
+        "persona",
+        "guardrails"
+      ],
       "examples": [
         {
           "context": "在 system prompt 里加上约束",
@@ -259,6 +341,560 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "System prompt = instruction before conversation. '系统提示词'. Sets persona, rules, constraints. Hidden from end users."
+      }
+    },
+    {
+      "term": "Fine-tuning",
+      "aliases": [
+        "微调",
+        "模型微调",
+        "Fine-tune"
+      ],
+      "definition": {
+        "en": "Further training a pre-trained model on domain-specific data to improve performance for specific tasks",
+        "zh": "在预训练模型基础上用特定领域数据进一步训练，以提升特定任务的表现"
+      },
+      "domain": "natural-language",
+      "related": [
+        "pre-training",
+        "transfer-learning",
+        "LLM"
+      ],
+      "examples": [
+        {
+          "context": "需要微调一下模型",
+          "meaning": "用领域数据进一步训练通用模型，使其更擅长特定任务"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Fine-tuning = further train model on specific data. '微调'. Cheaper than training from scratch. Use when prompts aren't enough."
+      }
+    },
+    {
+      "term": "Embedding",
+      "aliases": [
+        "向量嵌入",
+        "向量化",
+        "词向量"
+      ],
+      "definition": {
+        "en": "Converting text into a numerical vector representation that captures semantic meaning",
+        "zh": "将文本转换为捕获语义含义的数值向量表示"
+      },
+      "domain": "natural-language",
+      "related": [
+        "RAG",
+        "vector-database",
+        "similarity-search"
+      ],
+      "examples": [
+        {
+          "context": "把文档 embedding 后存到向量数据库",
+          "meaning": "将文档转换为向量，存入向量数据库以支持语义搜索"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Embedding = text → vector. '向量嵌入'. Similar meanings = nearby vectors. Foundation of RAG, semantic search."
+      }
+    },
+    {
+      "term": "Vector Database",
+      "aliases": [
+        "向量数据库",
+        "向量检索"
+      ],
+      "definition": {
+        "en": "A database optimized for storing and searching high-dimensional vectors (embeddings)",
+        "zh": "针对存储和搜索高维向量（嵌入）优化的数据库"
+      },
+      "domain": "natural-language",
+      "related": [
+        "embedding",
+        "RAG",
+        "similarity-search"
+      ],
+      "examples": [
+        {
+          "context": "用向量数据库做语义搜索",
+          "meaning": "将文本向量化后存入专用数据库，支持基于语义相似度的搜索"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Vector DB = store and search embeddings. '向量数据库'. Tools: Pinecone, Milvus, Weaviate, ChromaDB. Key for RAG."
+      }
+    },
+    {
+      "term": "Semantic Search",
+      "aliases": [
+        "语义搜索",
+        "语义检索"
+      ],
+      "definition": {
+        "en": "Search based on meaning rather than exact keyword matching, using embeddings and similarity",
+        "zh": "基于含义而非精确关键词匹配的搜索，使用嵌入和相似度"
+      },
+      "domain": "natural-language",
+      "related": [
+        "embedding",
+        "vector-database",
+        "RAG"
+      ],
+      "examples": [
+        {
+          "context": "用语义搜索替代关键词搜索",
+          "meaning": "基于语义相似度搜索，而不是精确匹配关键词"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Semantic Search = search by meaning, not keywords. '语义搜索'. Uses embeddings + cosine similarity. Better than keyword search for intent."
+      }
+    },
+    {
+      "term": "Chain of Thought",
+      "aliases": [
+        "思维链",
+        "CoT",
+        "逐步推理"
+      ],
+      "definition": {
+        "en": "A prompting technique that asks the model to show its reasoning step by step before giving a final answer",
+        "zh": "要求模型在给出最终答案前逐步展示推理过程的提示技术"
+      },
+      "domain": "natural-language",
+      "related": [
+        "prompt-engineering",
+        "reasoning",
+        "few-shot"
+      ],
+      "examples": [
+        {
+          "context": "用 CoT 提示让模型逐步推理",
+          "meaning": "在提示词中要求模型'一步一步想'，提高复杂推理的准确率"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Chain of Thought = ask model to reason step by step. '思维链'. 'Let's think step by step'. Improves math/logic tasks."
+      }
+    },
+    {
+      "term": "Guardrails",
+      "aliases": [
+        "护栏",
+        "安全护栏",
+        "输出约束"
+      ],
+      "definition": {
+        "en": "Safety mechanisms that constrain LLM outputs to prevent harmful, incorrect, or off-topic responses",
+        "zh": "约束 LLM 输出以防止有害、不正确或偏离主题回复的安全机制"
+      },
+      "domain": "natural-language",
+      "related": [
+        "system-prompt",
+        "safety",
+        "content-filter"
+      ],
+      "examples": [
+        {
+          "context": "加一些 guardrails 防止模型乱说",
+          "meaning": "设置安全约束，限制模型的输出范围和行为"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Guardrails = safety constraints on LLM output. '安全护栏'. Prevent: harmful content, off-topic, hallucination. Implement via prompt, fine-tuning, or tools."
+      }
+    },
+    {
+      "term": "Agent",
+      "aliases": [
+        "AI Agent",
+        "智能体",
+        "自主代理"
+      ],
+      "definition": {
+        "en": "An AI system that can autonomously use tools, make decisions, and take actions to accomplish tasks",
+        "zh": "能自主使用工具、做决策和执行操作来完成任务的 AI 系统"
+      },
+      "domain": "natural-language",
+      "related": [
+        "tool-use",
+        "function-calling",
+        "autonomy"
+      ],
+      "examples": [
+        {
+          "context": "这个 agent 可以自己写代码并运行",
+          "meaning": "AI 智能体能自主编写代码、执行并调试"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Agent = autonomous AI that uses tools and makes decisions. '智能体'. Loop: observe → think → act → observe. Not just chat."
+      }
+    },
+    {
+      "term": "Tool Use",
+      "aliases": [
+        "工具调用",
+        "Function Calling",
+        "工具使用"
+      ],
+      "definition": {
+        "en": "The ability of an LLM to invoke external tools (APIs, calculators, databases) to augment its capabilities",
+        "zh": "LLM 调用外部工具（API、计算器、数据库）以增强自身能力的特性"
+      },
+      "domain": "natural-language",
+      "related": [
+        "agent",
+        "function-calling",
+        "API"
+      ],
+      "examples": [
+        {
+          "context": "让模型调用搜索工具",
+          "meaning": "给 LLM 提供搜索 API，让它能获取实时信息"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Tool Use = LLM calling external tools. '工具调用'. Extends capabilities beyond text. Examples: search, code execution, API calls."
+      }
+    },
+    {
+      "term": "Zero-shot",
+      "aliases": [
+        "零样本",
+        "零样本学习"
+      ],
+      "definition": {
+        "en": "Asking a model to perform a task without providing any examples in the prompt",
+        "zh": "在提示词中不提供任何示例就让模型执行任务"
+      },
+      "domain": "natural-language",
+      "related": [
+        "few-shot",
+        "one-shot",
+        "prompt-engineering"
+      ],
+      "examples": [
+        {
+          "context": "zero-shot 试试看",
+          "meaning": "不给例子，直接让模型完成任务，看效果如何"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Zero-shot = no examples in prompt. '零样本'. Simpler prompt, relies on model's pre-training. Use when task is straightforward."
+      }
+    },
+    {
+      "term": "Top-p",
+      "aliases": [
+        "核采样",
+        "Nucleus Sampling",
+        "Top-p Sampling"
+      ],
+      "definition": {
+        "en": "A sampling parameter that limits token selection to the smallest set whose cumulative probability exceeds p",
+        "zh": "将 token 选择限制在累积概率超过 p 的最小集合中的采样参数"
+      },
+      "domain": "natural-language",
+      "related": [
+        "temperature",
+        "sampling",
+        "creativity"
+      ],
+      "examples": [
+        {
+          "context": "top-p 设成 0.9",
+          "meaning": "只从累积概率前 90% 的 token 中采样"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Top-p = nucleus sampling. '核采样'. 0.9 = consider top 90% probability mass. Often used with temperature."
+      }
+    },
+    {
+      "term": "Max Tokens",
+      "aliases": [
+        "最大 token 数",
+        "最大长度",
+        "输出长度限制"
+      ],
+      "definition": {
+        "en": "The maximum number of tokens the model will generate in its response",
+        "zh": "模型在响应中生成的最大 token 数量"
+      },
+      "domain": "natural-language",
+      "related": [
+        "token",
+        "context-window",
+        "generation"
+      ],
+      "examples": [
+        {
+          "context": "max tokens 设大一点",
+          "meaning": "增加输出长度限制，让模型生成更长的回答"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Max Tokens = output length limit. '最大 token 数'. Separate from context window. Set based on expected output length."
+      }
+    },
+    {
+      "term": "Stop Sequence",
+      "aliases": [
+        "停止序列",
+        "终止符",
+        "Stop Token"
+      ],
+      "definition": {
+        "en": "A specific string that tells the model to stop generating further tokens",
+        "zh": "告诉模型停止生成更多 token 的特定字符串"
+      },
+      "domain": "natural-language",
+      "related": [
+        "max-tokens",
+        "generation",
+        "prompt-engineering"
+      ],
+      "examples": [
+        {
+          "context": "加个 stop sequence",
+          "meaning": "设置一个终止字符串，让模型在输出到特定标记时停止"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Stop Sequence = string that halts generation. '停止序列'. Useful for structured output: stop at '```' after code block."
+      }
+    },
+    {
+      "term": "Context",
+      "aliases": [
+        "上下文",
+        "上下文信息",
+        "Context Information"
+      ],
+      "definition": {
+        "en": "The background information provided to the model to help it understand and respond appropriately",
+        "zh": "提供给模型以帮助其理解和适当回复的背景信息"
+      },
+      "domain": "natural-language",
+      "related": [
+        "context-window",
+        "prompt-engineering",
+        "RAG"
+      ],
+      "examples": [
+        {
+          "context": "给模型更多上下文",
+          "meaning": "提供更多的背景信息帮助模型理解任务"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Context = background info for the model. '上下文'. More relevant context = better output. RAG provides dynamic context."
+      }
+    },
+    {
+      "term": "Instruction Tuning",
+      "aliases": [
+        "指令微调",
+        "指令调优"
+      ],
+      "definition": {
+        "en": "Fine-tuning a model on instruction-response pairs to improve its ability to follow instructions",
+        "zh": "用指令-响应对微调模型以提高其遵循指令的能力"
+      },
+      "domain": "natural-language",
+      "related": [
+        "fine-tuning",
+        "RLHF",
+        "alignment"
+      ],
+      "examples": [
+        {
+          "context": "经过指令微调的模型更听话",
+          "meaning": "模型通过指令微调后更能理解和执行用户的指令"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Instruction Tuning = fine-tune on instruction-response pairs. '指令微调'. Makes models follow instructions better. Foundation of ChatGPT-like models."
+      }
+    },
+    {
+      "term": "RLHF",
+      "aliases": [
+        "人类反馈强化学习",
+        "Reinforcement Learning from Human Feedback"
+      ],
+      "definition": {
+        "en": "Training technique where human preferences are used as reward signals to align model behavior",
+        "zh": "使用人类偏好作为奖励信号来对齐模型行为的训练技术"
+      },
+      "domain": "natural-language",
+      "related": [
+        "alignment",
+        "instruction-tuning",
+        "fine-tuning"
+      ],
+      "examples": [
+        {
+          "context": "用 RLHF 让模型更安全",
+          "meaning": "通过人类反馈训练，让模型的输出更符合人类价值观"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "RLHF = train with human preferences. '人类反馈强化学习'. Humans rank outputs → reward model → optimize. Key to ChatGPT's quality."
+      }
+    },
+    {
+      "term": "Alignment",
+      "aliases": [
+        "对齐",
+        "价值对齐",
+        "AI 对齐"
+      ],
+      "definition": {
+        "en": "Ensuring AI systems behave in accordance with human values and intentions",
+        "zh": "确保 AI 系统的行为符合人类价值观和意图"
+      },
+      "domain": "natural-language",
+      "related": [
+        "RLHF",
+        "guardrails",
+        "safety"
+      ],
+      "examples": [
+        {
+          "context": "对齐是一个重要问题",
+          "meaning": "如何让 AI 的行为真正符合人类的意图，而不是只在表面上看起来正确"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Alignment = make AI follow human values. '对齐'. Technical challenge: reward hacking, specification gaming. Key research area."
+      }
+    },
+    {
+      "term": "Multimodal",
+      "aliases": [
+        "多模态",
+        "多模态模型"
+      ],
+      "definition": {
+        "en": "AI models that can process and generate multiple types of data (text, images, audio, video)",
+        "zh": "能处理和生成多种数据类型（文本、图像、音频、视频）的 AI 模型"
+      },
+      "domain": "natural-language",
+      "related": [
+        "LLM",
+        "vision",
+        "generation"
+      ],
+      "examples": [
+        {
+          "context": "这个模型是多模态的",
+          "meaning": "模型不仅能处理文本，还能理解图片、音频等"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Multimodal = handles multiple data types. '多模态'. Text + image + audio. Examples: GPT-4V, Claude 3, Gemini."
+      }
+    },
+    {
+      "term": "Token Limit",
+      "aliases": [
+        "token 限制",
+        "上下文限制"
+      ],
+      "definition": {
+        "en": "The maximum total number of tokens (input + output) a model can handle in a single request",
+        "zh": "模型在单次请求中能处理的最大 token 总数（输入 + 输出）"
+      },
+      "domain": "natural-language",
+      "related": [
+        "context-window",
+        "max-tokens",
+        "token"
+      ],
+      "examples": [
+        {
+          "context": "超过 token limit 了",
+          "meaning": "输入和期望输出的总 token 数超出了模型限制"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Token Limit = max input + output tokens. 'token 限制'. Input tokens + max output tokens ≤ model limit. Plan accordingly."
+      }
+    },
+    {
+      "term": "Latency (AI)",
+      "aliases": [
+        "推理延迟",
+        "首 token 延迟",
+        "TTFT",
+        "Time to First Token"
+      ],
+      "definition": {
+        "en": "The time delay between sending a request to an AI model and receiving the first token of the response",
+        "zh": "从发送请求到收到模型第一个响应 token 之间的时间延迟"
+      },
+      "domain": "natural-language",
+      "related": [
+        "throughput",
+        "streaming",
+        "token"
+      ],
+      "examples": [
+        {
+          "context": "首 token 延迟太高了",
+          "meaning": "模型开始响应的时间太长，用户体验差"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "AI Latency = time to first token (TTFT). '推理延迟'. Different from throughput. Streaming reduces perceived latency."
+      }
+    },
+    {
+      "term": "Streaming",
+      "aliases": [
+        "流式输出",
+        "流式响应",
+        "SSE"
+      ],
+      "definition": {
+        "en": "Delivering AI responses token by token as they're generated, rather than waiting for the complete response",
+        "zh": "逐个 token 生成并返回 AI 响应，而不是等待完整响应"
+      },
+      "domain": "natural-language",
+      "related": [
+        "latency",
+        "token",
+        "user-experience"
+      ],
+      "examples": [
+        {
+          "context": "用流式输出",
+          "meaning": "逐字显示 AI 的回复，而不是等全部生成完再显示"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Streaming = deliver tokens as generated. '流式输出'. Reduces perceived latency. Users see response forming in real-time."
       }
     }
   ]

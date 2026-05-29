@@ -4,13 +4,21 @@
   "terms": [
     {
       "term": "MVP",
-      "aliases": ["最小可行产品", "最小可用产品", "Minimum Viable Product"],
+      "aliases": [
+        "最小可行产品",
+        "最小可用产品",
+        "Minimum Viable Product"
+      ],
       "definition": {
         "en": "The simplest version of a product that can be released to test core hypotheses and gather user feedback",
         "zh": "产品最简单的版本，可以发布以测试核心假设并收集用户反馈"
       },
       "domain": "product",
-      "related": ["prototype", "PMF", "lean-startup"],
+      "related": [
+        "prototype",
+        "PMF",
+        "lean-startup"
+      ],
       "examples": [
         {
           "context": "先做 MVP 验证一下",
@@ -24,13 +32,20 @@
     },
     {
       "term": "PMF",
-      "aliases": ["产品市场契合", "Product-Market Fit"],
+      "aliases": [
+        "产品市场契合",
+        "Product-Market Fit"
+      ],
       "definition": {
         "en": "The degree to which a product satisfies strong market demand — the moment you realize you can't keep up with demand",
         "zh": "产品满足强烈市场需求的程度——当你发现无法跟上需求增长的那一刻"
       },
       "domain": "product",
-      "related": ["MVP", "product-market-fit", "growth"],
+      "related": [
+        "MVP",
+        "product-market-fit",
+        "growth"
+      ],
       "examples": [
         {
           "context": "还没找到 PMF",
@@ -44,13 +59,20 @@
     },
     {
       "term": "User Story",
-      "aliases": ["用户故事", "User Story"],
+      "aliases": [
+        "用户故事",
+        "User Story"
+      ],
       "definition": {
         "en": "A short, simple description of a feature told from the perspective of the end user (As a [user], I want [goal] so that [benefit])",
         "zh": "从最终用户角度描述功能的简短叙述（作为[用户]，我想要[目标]，以便[获得价值]）"
       },
       "domain": "product",
-      "related": ["acceptance-criteria", "agile", "backlog"],
+      "related": [
+        "acceptance-criteria",
+        "agile",
+        "backlog"
+      ],
       "examples": [
         {
           "context": "写个用户故事",
@@ -64,13 +86,21 @@
     },
     {
       "term": "Scoping",
-      "aliases": ["范围界定", "需求范围", "Scope"],
+      "aliases": [
+        "范围界定",
+        "需求范围",
+        "Scope"
+      ],
       "definition": {
         "en": "Defining the boundaries of what will and won't be included in a project or release",
         "zh": "定义项目或发布中包含和不包含内容的边界"
       },
       "domain": "product",
-      "related": ["requirements", "scope-creep", "backlog"],
+      "related": [
+        "requirements",
+        "scope-creep",
+        "backlog"
+      ],
       "examples": [
         {
           "context": "先 scope 一下",
@@ -88,13 +118,21 @@
     },
     {
       "term": "Stakeholder",
-      "aliases": ["利益相关者", "干系人", "相关方"],
+      "aliases": [
+        "利益相关者",
+        "干系人",
+        "相关方"
+      ],
       "definition": {
         "en": "Anyone who has an interest in or is affected by the project's outcome (users, investors, team, management)",
         "zh": "对项目结果有兴趣或受其影响的人（用户、投资人、团队、管理层）"
       },
       "domain": "product",
-      "related": ["requirements", "alignment", "communication"],
+      "related": [
+        "requirements",
+        "alignment",
+        "communication"
+      ],
       "examples": [
         {
           "context": "需要对齐一下 stakeholder",
@@ -108,13 +146,21 @@
     },
     {
       "term": "AB Testing",
-      "aliases": ["A/B测试", "分流测试", "对比测试"],
+      "aliases": [
+        "A/B测试",
+        "分流测试",
+        "对比测试"
+      ],
       "definition": {
         "en": "An experiment where two versions (A and B) are compared to see which performs better on a specific metric",
         "zh": "对比两个版本（A 和 B）以确定哪个在特定指标上表现更好的实验"
       },
       "domain": "product",
-      "related": ["experimentation", "conversion-rate", "feature-flag"],
+      "related": [
+        "experimentation",
+        "conversion-rate",
+        "feature-flag"
+      ],
       "examples": [
         {
           "context": "做个 AB 测试看看哪个方案好",
@@ -128,13 +174,21 @@
     },
     {
       "term": "Conversion Rate",
-      "aliases": ["转化率", "转化", "Conversion"],
+      "aliases": [
+        "转化率",
+        "转化",
+        "Conversion"
+      ],
       "definition": {
         "en": "The percentage of users who complete a desired action (purchase, sign up, etc.) out of total visitors",
         "zh": "完成期望操作（购买、注册等）的用户占总访问者的百分比"
       },
       "domain": "product",
-      "related": ["funnel", "A/B testing", "engagement"],
+      "related": [
+        "funnel",
+        "A/B testing",
+        "engagement"
+      ],
       "examples": [
         {
           "context": "转化率太低了",
@@ -148,13 +202,21 @@
     },
     {
       "term": "Pain Point",
-      "aliases": ["痛点", "用户痛点", "需求痛点"],
+      "aliases": [
+        "痛点",
+        "用户痛点",
+        "需求痛点"
+      ],
       "definition": {
         "en": "A specific problem or frustration that users experience, representing an opportunity for a product solution",
         "zh": "用户遇到的具体问题或挫败感，代表了产品解决方案的机会"
       },
       "domain": "product",
-      "related": ["user-research", "jobs-to-be-done", "value-proposition"],
+      "related": [
+        "user-research",
+        "jobs-to-be-done",
+        "value-proposition"
+      ],
       "examples": [
         {
           "context": "用户痛点是什么？",
@@ -168,13 +230,21 @@
     },
     {
       "term": "Value Proposition",
-      "aliases": ["价值主张", "核心价值", "Value Prop"],
+      "aliases": [
+        "价值主张",
+        "核心价值",
+        "Value Prop"
+      ],
       "definition": {
         "en": "A clear statement of the unique value a product delivers to its target users and why they should choose it",
         "zh": "清晰阐述产品为目标用户提供的独特价值，以及用户为什么应该选择它"
       },
       "domain": "product",
-      "related": ["pain-point", "differentiation", "positioning"],
+      "related": [
+        "pain-point",
+        "differentiation",
+        "positioning"
+      ],
       "examples": [
         {
           "context": "我们的价值主张是什么？",
@@ -188,13 +258,22 @@
     },
     {
       "term": "Funnel",
-      "aliases": ["漏斗", "转化漏斗", "用户漏斗", "Conversion Funnel"],
+      "aliases": [
+        "漏斗",
+        "转化漏斗",
+        "用户漏斗",
+        "Conversion Funnel"
+      ],
       "definition": {
         "en": "A model representing the stages a user goes through from awareness to conversion, where drop-off occurs at each stage",
         "zh": "描述用户从认知到转化各阶段的模型，每个阶段都有用户流失"
       },
       "domain": "product",
-      "related": ["conversion-rate", "drop-off", "acquisition"],
+      "related": [
+        "conversion-rate",
+        "drop-off",
+        "acquisition"
+      ],
       "examples": [
         {
           "context": "看看漏斗哪一步流失最多",
@@ -208,13 +287,21 @@
     },
     {
       "term": "Growth Hacking",
-      "aliases": ["增长黑客", "增长策略", "Growth"],
+      "aliases": [
+        "增长黑客",
+        "增长策略",
+        "Growth"
+      ],
       "definition": {
         "en": "A strategy focused on rapid experimentation across marketing channels and product development to find the most effective ways to grow",
         "zh": "通过在营销渠道和产品开发上快速实验，找到最有效增长方式的策略"
       },
       "domain": "product",
-      "related": ["acquisition", "retention", "viral-loop"],
+      "related": [
+        "acquisition",
+        "retention",
+        "viral-loop"
+      ],
       "examples": [
         {
           "context": "需要一些增长黑客的手段",
@@ -228,14 +315,27 @@
     },
     {
       "term": "Retention",
-      "aliases": ["留存", "用户留存", "留存率", "Retention Rate"],
+      "aliases": [
+        "留存",
+        "用户留存",
+        "留存率",
+        "Retention Rate"
+      ],
       "definition": {
         "en": "The percentage of users who continue using a product over a given time period",
         "zh": "在给定时间段内继续使用产品的用户百分比"
       },
       "domain": "product",
-      "related": ["churn", "engagement", "DAU", "MAU"],
-      "opposite_of": ["churn", "流失"],
+      "related": [
+        "churn",
+        "engagement",
+        "DAU",
+        "MAU"
+      ],
+      "opposite_of": [
+        "churn",
+        "流失"
+      ],
       "examples": [
         {
           "context": "次日留存多少？",
@@ -249,14 +349,26 @@
     },
     {
       "term": "Churn",
-      "aliases": ["流失", "用户流失", "Churn Rate", "流失率"],
+      "aliases": [
+        "流失",
+        "用户流失",
+        "Churn Rate",
+        "流失率"
+      ],
       "definition": {
         "en": "The percentage of users who stop using a product over a given time period",
         "zh": "在给定时间段内停止使用产品的用户百分比"
       },
       "domain": "product",
-      "related": ["retention", "engagement", "customer-lifetime-value"],
-      "opposite_of": ["retention", "留存"],
+      "related": [
+        "retention",
+        "engagement",
+        "customer-lifetime-value"
+      ],
+      "opposite_of": [
+        "retention",
+        "留存"
+      ],
       "examples": [
         {
           "context": "这个月 churn 太高了",
@@ -270,13 +382,22 @@
     },
     {
       "term": "Backlog",
-      "aliases": ["待办列表", "需求池", "Backlog"],
+      "aliases": [
+        "待办列表",
+        "需求池",
+        "Backlog"
+      ],
       "definition": {
         "en": "A prioritized list of features, bugs, and tasks to be worked on, maintained by the product owner",
         "zh": "由产品负责人维护的、按优先级排列的功能、缺陷和任务列表"
       },
       "domain": "product",
-      "related": ["prioritization", "sprint", "agile", "scrum"],
+      "related": [
+        "prioritization",
+        "sprint",
+        "agile",
+        "scrum"
+      ],
       "examples": [
         {
           "context": "加到 backlog 里",
@@ -290,13 +411,22 @@
     },
     {
       "term": "Prioritization",
-      "aliases": ["优先级排序", "排优先级", "需求优先级"],
+      "aliases": [
+        "优先级排序",
+        "排优先级",
+        "需求优先级"
+      ],
       "definition": {
         "en": "The process of deciding the order in which features or tasks should be worked on based on value, effort, and urgency",
         "zh": "根据价值、工作量和紧迫度决定功能或任务的开发顺序"
       },
       "domain": "product",
-      "related": ["backlog", "RICE", "MoSCoW", "impact-effort"],
+      "related": [
+        "backlog",
+        "RICE",
+        "MoSCoW",
+        "impact-effort"
+      ],
       "examples": [
         {
           "context": "先排一下优先级",
@@ -306,6 +436,668 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Prioritization = decide what to build first. Methods: RICE, MoSCoW, Impact/Effort matrix. '排优先级'."
+      }
+    },
+    {
+      "term": "Sprint",
+      "aliases": [
+        "迭代",
+        "冲刺",
+        "Sprint 周期"
+      ],
+      "definition": {
+        "en": "A fixed time period (usually 1-4 weeks) in which a team completes a set of work items",
+        "zh": "团队完成一组工作项的固定时间段（通常 1-4 周）"
+      },
+      "domain": "product",
+      "related": [
+        "scrum",
+        "backlog",
+        "velocity"
+      ],
+      "examples": [
+        {
+          "context": "这个 sprint 做不完",
+          "meaning": "当前迭代周期内无法完成这个需求"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Sprint = fixed time box for work. '迭代'/'冲刺'. Scrum concept, usually 2 weeks."
+      }
+    },
+    {
+      "term": "Scrum",
+      "aliases": [
+        "Scrum 框架",
+        "敏捷开发框架"
+      ],
+      "definition": {
+        "en": "An agile framework for managing complex work, with roles (PO, SM, Dev Team), events (Sprint, Standup, Retro), and artifacts",
+        "zh": "管理复杂工作的敏捷框架，包含角色（PO、SM、开发团队）、事件（迭代、站会、回顾）和工件"
+      },
+      "domain": "product",
+      "related": [
+        "sprint",
+        "agile",
+        "standup"
+      ],
+      "examples": [
+        {
+          "context": "我们用 Scrum 流程",
+          "meaning": "按照 Scrum 框架组织开发，有固定的迭代周期和仪式"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Scrum = agile framework with sprints, standups, retros. Roles: Product Owner, Scrum Master, Dev Team."
+      }
+    },
+    {
+      "term": "Standup",
+      "aliases": [
+        "站会",
+        "每日站会",
+        "Daily Standup",
+        "Daily"
+      ],
+      "definition": {
+        "en": "A short daily meeting where team members share what they did, what they'll do, and any blockers",
+        "zh": "团队成员每天简短分享：昨天做了什么、今天要做什么、有什么阻碍"
+      },
+      "domain": "product",
+      "related": [
+        "scrum",
+        "sprint",
+        "agile"
+      ],
+      "examples": [
+        {
+          "context": "站会上说一下进度",
+          "meaning": "在每日站会中汇报工作进展和阻塞问题"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Standup = daily short sync meeting. '站会'. Three questions: done? planned? blockers? Usually 15 min max."
+      }
+    },
+    {
+      "term": "Retrospective",
+      "aliases": [
+        "回顾会",
+        "复盘",
+        "Retro",
+        "Sprint Retro"
+      ],
+      "definition": {
+        "en": "A meeting at the end of a sprint where the team reflects on what went well, what didn't, and how to improve",
+        "zh": "迭代结束时的会议，团队反思哪些做得好、哪些不好、如何改进"
+      },
+      "domain": "product",
+      "related": [
+        "scrum",
+        "sprint",
+        "agile"
+      ],
+      "examples": [
+        {
+          "context": "回顾一下这个 sprint",
+          "meaning": "开复盘会讨论这个迭代的经验教训"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Retro = reflect and improve. '回顾会'/'复盘'. Format: what went well, what didn't, action items."
+      }
+    },
+    {
+      "term": "Kanban",
+      "aliases": [
+        "看板",
+        "看板方法"
+      ],
+      "definition": {
+        "en": "A visual workflow management method using columns (To Do, In Progress, Done) with WIP limits",
+        "zh": "使用列（待办、进行中、已完成）和 WIP 限制的可视化工作流管理方法"
+      },
+      "domain": "product",
+      "related": [
+        "agile",
+        "workflow",
+        "WIP"
+      ],
+      "examples": [
+        {
+          "context": "用看板管理任务",
+          "meaning": "把任务卡片在看板上从左到右移动，可视化工作流"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Kanban = visual workflow with columns. '看板'. WIP limits prevent overload. Continuous flow, no fixed sprints."
+      }
+    },
+    {
+      "term": "OKR",
+      "aliases": [
+        "目标与关键结果",
+        "Objectives and Key Results"
+      ],
+      "definition": {
+        "en": "A goal-setting framework: Objectives define what to achieve, Key Results measure how to get there",
+        "zh": "目标设定框架：目标（O）定义要达成什么，关键结果（KR）衡量如何到达"
+      },
+      "domain": "product",
+      "related": [
+        "KPI",
+        "north-star-metric",
+        "strategy"
+      ],
+      "examples": [
+        {
+          "context": "Q2 的 OKR 是什么？",
+          "meaning": "这个季度的目标和关键结果是什么？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "OKR = Objectives + Key Results. '目标与关键结果'. Objective = ambitious goal. Key Result = measurable outcome. Google's framework."
+      }
+    },
+    {
+      "term": "KPI",
+      "aliases": [
+        "关键绩效指标",
+        "Key Performance Indicator"
+      ],
+      "definition": {
+        "en": "Quantifiable metrics used to evaluate success against strategic objectives",
+        "zh": "用于评估战略目标达成情况的可量化指标"
+      },
+      "domain": "product",
+      "related": [
+        "OKR",
+        "north-star-metric",
+        "analytics"
+      ],
+      "examples": [
+        {
+          "context": "这个季度的 KPI 是 DAU 增长 20%",
+          "meaning": "核心考核指标是日活用户增长 20%"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "KPI = measurable success metric. '关键绩效指标'. Lagging indicator. OKR is more ambitious, KPI is more operational."
+      }
+    },
+    {
+      "term": "North Star Metric",
+      "aliases": [
+        "北极星指标",
+        "核心指标",
+        "唯一关键指标"
+      ],
+      "definition": {
+        "en": "The single metric that best captures the core value your product delivers to customers",
+        "zh": "最能体现产品为客户交付的核心价值的单一指标"
+      },
+      "domain": "product",
+      "related": [
+        "KPI",
+        "OKR",
+        "product-strategy"
+      ],
+      "examples": [
+        {
+          "context": "我们的北极星指标是周活跃用户数",
+          "meaning": "最核心的指标是每周有多少用户在使用产品"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "North Star Metric = one metric that captures core value. '北极星指标'. Example: Airbnb = nights booked, Spotify = time listened."
+      }
+    },
+    {
+      "term": "Roadmap",
+      "aliases": [
+        "路线图",
+        "产品路线图",
+        "产品规划"
+      ],
+      "definition": {
+        "en": "A high-level visual summary of the vision and direction of a product over time",
+        "zh": "产品愿景和方向的高级可视化概览"
+      },
+      "domain": "product",
+      "related": [
+        "backlog",
+        "prioritization",
+        "strategy"
+      ],
+      "examples": [
+        {
+          "context": "看一下 Q3 的路线图",
+          "meaning": "查看第三季度的产品规划和目标"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Roadmap = high-level product plan over time. '路线图'. Themes/goals, not specific features. Adjusts as you learn."
+      }
+    },
+    {
+      "term": "Wireframe",
+      "aliases": [
+        "线框图",
+        "原型图",
+        "低保真原型"
+      ],
+      "definition": {
+        "en": "A low-fidelity visual representation of a UI layout, showing structure without detailed design",
+        "zh": "UI 布局的低保真可视化表示，展示结构而非详细设计"
+      },
+      "domain": "product",
+      "related": [
+        "prototype",
+        "UX",
+        "usability"
+      ],
+      "examples": [
+        {
+          "context": "先画个线框图",
+          "meaning": "在开始设计前先用线框图确定页面布局和元素位置"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Wireframe = low-fi UI sketch. '线框图'. Structure only, no colors/details. Tools: Figma, Balsamiq, paper sketch."
+      }
+    },
+    {
+      "term": "Prototype",
+      "aliases": [
+        "原型",
+        "交互原型",
+        "高保真原型"
+      ],
+      "definition": {
+        "en": "An interactive simulation of a product used for testing and validating design decisions before development",
+        "zh": "产品的交互模拟，用于在开发前测试和验证设计决策"
+      },
+      "domain": "product",
+      "related": [
+        "wireframe",
+        "MVP",
+        "usability-testing"
+      ],
+      "examples": [
+        {
+          "context": "做个原型测试一下",
+          "meaning": "做一个可交互的原型让用户试用，验证设计是否合理"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Prototype = interactive mockup for testing. '原型'. High-fi = looks real. Low-fi = wireframe. Test before building."
+      }
+    },
+    {
+      "term": "Usability",
+      "aliases": [
+        "可用性",
+        "易用性"
+      ],
+      "definition": {
+        "en": "How easy and intuitive a product is for users to accomplish their goals",
+        "zh": "用户完成目标的容易程度和直觉性"
+      },
+      "domain": "product",
+      "related": [
+        "UX",
+        "usability-testing",
+        "accessibility"
+      ],
+      "examples": [
+        {
+          "context": "可用性测试发现用户找不到按钮",
+          "meaning": "用户测试显示按钮位置不直观，需要调整"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Usability = how easy to use. '可用性'/'易用性'. Measured by: task completion rate, time on task, error rate."
+      }
+    },
+    {
+      "term": "DAU",
+      "aliases": [
+        "日活跃用户",
+        "Daily Active Users"
+      ],
+      "definition": {
+        "en": "The number of unique users who engage with a product in a day",
+        "zh": "一天内使用产品的独立用户数量"
+      },
+      "domain": "product",
+      "related": [
+        "MAU",
+        "retention",
+        "engagement"
+      ],
+      "examples": [
+        {
+          "context": "DAU 破万了",
+          "meaning": "日活跃用户数超过一万"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "DAU = daily active users. '日活跃用户'. Key engagement metric. DAU/MAU ratio = stickiness."
+      }
+    },
+    {
+      "term": "MAU",
+      "aliases": [
+        "月活跃用户",
+        "Monthly Active Users"
+      ],
+      "definition": {
+        "en": "The number of unique users who engage with a product in a month",
+        "zh": "一个月内使用产品的独立用户数量"
+      },
+      "domain": "product",
+      "related": [
+        "DAU",
+        "retention",
+        "engagement"
+      ],
+      "examples": [
+        {
+          "context": "MAU 100 万",
+          "meaning": "月活跃用户达到 100 万"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "MAU = monthly active users. '月活跃用户'. Broader reach metric. DAU/MAU = engagement ratio."
+      }
+    },
+    {
+      "term": "NPS",
+      "aliases": [
+        "净推荐值",
+        "Net Promoter Score"
+      ],
+      "definition": {
+        "en": "A metric measuring customer loyalty based on how likely they are to recommend the product (0-10 scale)",
+        "zh": "基于用户推荐意愿（0-10 分）衡量客户忠诚度的指标"
+      },
+      "domain": "product",
+      "related": [
+        "user-satisfaction",
+        "retention",
+        "feedback"
+      ],
+      "examples": [
+        {
+          "context": "NPS 评分多少？",
+          "meaning": "用户推荐意愿评分是多少？9-10 是推荐者，0-6 是贬损者"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "NPS = Net Promoter Score (0-10). '净推荐值'. Promoters (9-10) - Detractors (0-6) = NPS. >50 is excellent."
+      }
+    },
+    {
+      "term": "Bounce Rate",
+      "aliases": [
+        "跳出率",
+        "弹出率"
+      ],
+      "definition": {
+        "en": "The percentage of visitors who leave a site after viewing only one page",
+        "zh": "只浏览一个页面就离开网站的访客百分比"
+      },
+      "domain": "product",
+      "related": [
+        "analytics",
+        "engagement",
+        "conversion-rate"
+      ],
+      "examples": [
+        {
+          "context": "跳出率太高了",
+          "meaning": "用户进来就走了，没有继续浏览，说明落地页有问题"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Bounce Rate = % visitors who leave after one page. '跳出率'. High = landing page not engaging. Improve: better CTA, faster load."
+      }
+    },
+    {
+      "term": "Onboarding",
+      "aliases": [
+        "新手引导",
+        "用户引导",
+        "新用户引导"
+      ],
+      "definition": {
+        "en": "The process of guiding new users to understand and get value from a product",
+        "zh": "引导新用户理解并从产品中获得价值的过程"
+      },
+      "domain": "product",
+      "related": [
+        "activation",
+        "retention",
+        "UX"
+      ],
+      "examples": [
+        {
+          "context": "优化一下新手引导流程",
+          "meaning": "改进新用户首次使用产品的体验，帮助他们快速上手"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Onboarding = guide new users to value. '新手引导'. Key moment: first 'aha' experience. Reduce time-to-value."
+      }
+    },
+    {
+      "term": "Activation",
+      "aliases": [
+        "激活",
+        "用户激活"
+      ],
+      "definition": {
+        "en": "The point where a new user first experiences the core value of a product",
+        "zh": "新用户首次体验到产品核心价值的时刻"
+      },
+      "domain": "product",
+      "related": [
+        "onboarding",
+        "retention",
+        "AARRR"
+      ],
+      "examples": [
+        {
+          "context": "激活率太低了",
+          "meaning": "注册的用户中真正使用了核心功能的比例太低"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Activation = user first experiences core value. '激活'. Define your activation moment. Example: 'sent first message' for chat app."
+      }
+    },
+    {
+      "term": "AARRR",
+      "aliases": [
+        "海盗指标",
+        "增长漏斗",
+        "Pirate Metrics"
+      ],
+      "definition": {
+        "en": "Startup metrics framework: Acquisition, Activation, Retention, Revenue, Referral",
+        "zh": "创业公司指标框架：获取、激活、留存、收入、推荐"
+      },
+      "domain": "product",
+      "related": [
+        "growth",
+        "analytics",
+        "funnel"
+      ],
+      "examples": [
+        {
+          "context": "用 AARRR 模型分析",
+          "meaning": "按获取→激活→留存→收入→推荐的漏斗分析用户行为"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "AARRR = Acquisition, Activation, Retention, Revenue, Referral. '海盗指标'. Dave McClure's startup metrics framework."
+      }
+    },
+    {
+      "term": "Viral Loop",
+      "aliases": [
+        "病毒循环",
+        "病毒传播",
+        "自传播"
+      ],
+      "definition": {
+        "en": "A mechanism where existing users naturally invite new users, creating exponential growth",
+        "zh": "现有用户自然邀请新用户的机制，产生指数级增长"
+      },
+      "domain": "product",
+      "related": [
+        "growth-hacking",
+        "referral",
+        "K-factor"
+      ],
+      "examples": [
+        {
+          "context": "设计一个病毒传播机制",
+          "meaning": "让用户自发分享和邀请，实现用户自增长"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Viral Loop = users invite users. '病毒循环'. K-factor > 1 = viral growth. Examples: referral rewards, shareable content."
+      }
+    },
+    {
+      "term": "Product-Led Growth",
+      "aliases": [
+        "产品驱动增长",
+        "PLG"
+      ],
+      "definition": {
+        "en": "A growth strategy where the product itself drives acquisition, conversion, and expansion",
+        "zh": "由产品本身驱动获客、转化和扩展的增长策略"
+      },
+      "domain": "product",
+      "related": [
+        "growth",
+        "freemium",
+        "self-serve"
+      ],
+      "examples": [
+        {
+          "context": "我们走 PLG 路线",
+          "meaning": "靠产品本身的体验和口碑来获客增长，而不是靠销售团队"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "PLG = product drives growth, not sales team. '产品驱动增长'. Examples: Slack, Notion, Figma. Free tier → upgrade."
+      }
+    },
+    {
+      "term": "Freemium",
+      "aliases": [
+        "免费增值",
+        "免费+付费"
+      ],
+      "definition": {
+        "en": "A pricing model where basic features are free, but advanced features require payment",
+        "zh": "基础功能免费、高级功能付费的定价模型"
+      },
+      "domain": "product",
+      "related": [
+        "pricing",
+        "conversion",
+        "PLG"
+      ],
+      "examples": [
+        {
+          "context": "用 freemium 模式",
+          "meaning": "提供免费版本吸引用户，部分高级功能需要付费"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Freemium = free + premium. '免费增值'. Free tier for acquisition, paid tier for revenue. Key: free must be valuable enough."
+      }
+    },
+    {
+      "term": "Persona",
+      "aliases": [
+        "用户画像",
+        "用户角色",
+        "User Persona"
+      ],
+      "definition": {
+        "en": "A fictional character representing a key user segment, based on research data",
+        "zh": "基于研究数据创建的、代表关键用户群体的虚构角色"
+      },
+      "domain": "product",
+      "related": [
+        "user-research",
+        "segmentation",
+        "UX"
+      ],
+      "examples": [
+        {
+          "context": "我们的核心 persona 是什么？",
+          "meaning": "我们的主要用户画像是什么样的人？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Persona = fictional user representative. '用户画像'. Based on real research. Includes goals, frustrations, behaviors."
+      }
+    },
+    {
+      "term": "Jobs to be Done",
+      "aliases": [
+        "待完成任务",
+        "JTBD",
+        "用户任务"
+      ],
+      "definition": {
+        "en": "A framework focusing on what 'job' a customer is trying to accomplish, rather than product features",
+        "zh": "关注客户想要完成什么「任务」而非产品功能的框架"
+      },
+      "domain": "product",
+      "related": [
+        "pain-point",
+        "user-research",
+        "value-proposition"
+      ],
+      "examples": [
+        {
+          "context": "用户 hire 这个产品是为了解决什么 JTBD？",
+          "meaning": "用户选择这个产品是为了完成什么任务？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "JTBD = what job is user hiring your product for? '待完成任务'. Focus on motivation, not features. Clayton Christensen's framework."
       }
     }
   ]
