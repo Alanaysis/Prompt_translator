@@ -117,6 +117,28 @@ python tools/translate.py --list-terms product
 python tools/translate.py --interactive
 ```
 
+### 使用 Agent Skill
+
+在 Claude Code 中直接调用：
+
+```
+/translate 先做 MVP 验证一下用户痛点
+/translate --from engineering --to product 需要解耦加熔断
+```
+
+### 使用 Obsidian 合并工具
+
+```bash
+# 生成 Obsidian 兼容文件（含 wiki-links、frontmatter）
+python tools/merge.py generate
+
+# 生成跨领域映射文档
+python tools/merge.py map product software-engineering
+
+# 将术语注入到项目文档中（自动添加 wiki-link）
+python tools/merge.py inject /path/to/your/project
+```
+
 ### 配置
 
 编辑 [config/primary-domain.json](./config/primary-domain.json) 设置你的默认领域：
@@ -164,8 +186,19 @@ Prompt_translator/
 ├── config/
 │   ├── primary-domain.json
 │   └── vibe-link.json
-└── tools/
-    └── translate.py                # 跨领域翻译 CLI
+├── tools/
+│   ├── translate.py                # 跨领域翻译 CLI
+│   └── merge.py                    # Obsidian 合并工具
+├── .claude/
+│   └── skills/
+│       └── translate/
+│           └── SKILL.md            # Agent Skill 定义
+└── output/                         # 生成的 Obsidian 文件
+    ├── _index.md
+    ├── software-engineering/
+    ├── product/
+    ├── natural-language/
+    └── mappings/
 ```
 
 ## 如何贡献
@@ -188,8 +221,8 @@ Prompt_translator/
 
 - [x] Phase 1: 基础结构 + 152 个术语
 - [x] Phase 2: 跨领域翻译 CLI
-- [ ] Phase 3: Agent Skill（`/translate`）
-- [ ] Phase 4: Obsidian 合并工具
+- [x] Phase 3: Agent Skill（`/translate`）
+- [x] Phase 4: Obsidian 合并工具
 - [ ] Phase 5: 社区化（CONTRIBUTING.md + CI 验证）
 
 ## License
