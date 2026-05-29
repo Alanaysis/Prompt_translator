@@ -1,0 +1,91 @@
+---
+domain: software-engineering
+tags: [glossary, index]
+---
+
+# software-engineering 术语索引
+
+共 82 个术语
+
+- [[ACID|ACID]] — 保证数据库事务可靠性的四个特性：原子性、一致性、隔离性、持久性
+- [[API|API]] — 一组规则和协议，允许不同的软件组件之间相互通信
+- [[API-Gateway|API Gateway]] — 所有 API 请求的统一入口，处理路由、认证、限流等
+- [[Authentication|Authentication]] — 验证用户或系统身份的过程
+- [[Authorization|Authorization]] — 确定已认证用户可以执行哪些操作的过程
+- [[Blue-Green-Deployment|Blue-Green Deployment]] — 维护两个相同环境的部署策略；流量从蓝色（当前）切换到绿色（新版）
+- [[Boilerplate|Boilerplate]] — 在项目间或项目内几乎不加修改就重复使用的代码
+- [[Bottleneck|Bottleneck]] — 系统中限制整体性能或吞吐量的环节
+- [[CDN|CDN]] — 地理分布的服务器网络，从最近的位置向用户分发内容
+- [[CI-CD|CI/CD]] — 将代码变更频繁集成到共享仓库的实践，通过自动化构建、测试和部署来快速交付软件
+- [[CSRF|CSRF]] — 欺骗用户浏览器向已认证的网站发送非预期请求的攻击方式
+- [[Caching|Caching]] — 将频繁访问的数据存储在更快的存储层中，以减少访问时间和后端负载
+- [[Caching-Strategy|Caching Strategy]] — 关于何时以及如何填充、失效和更新缓存数据的方法
+- [[Canary-Release|Canary Release]] — 在全量部署前，先将新版本逐步推送给一小部分用户
+- [[Chaos-Engineering|Chaos Engineering]] — 故意向系统注入故障以测试其韧性并发现弱点
+- [[Circuit-Breaker|Circuit Breaker]] — 通过停止调用故障服务并返回降级响应来防止级联失败的模式
+- [[Code-Review|Code Review]] — 由团队成员系统性地检查源代码，以发现缺陷、确保质量和分享知识
+- [[Conflict|Conflict]] — 两个分支修改了同一行代码，Git 无法自动合并
+- [[Containerization|Containerization]] — 将应用及其依赖打包成标准化单元（容器），以实现跨环境的一致部署
+- [[Convention-over-Configuration|Convention over Configuration]] — 提供合理默认值的设计范式，开发者只需指定非常规的部分
+- [[Database-Index|Database Index]] — 提高数据库查询速度的数据结构，代价是额外的存储空间和写入开销
+- [[Database-Migration|Database Migration]] — 对数据库结构的版本化变更（添加表、列、修改结构）
+- [[Dead-Letter-Queue|Dead Letter Queue]] — 无法成功处理的消息被发送到的队列，供后续分析
+- [[Decoupling|Decoupling]] — 减少组件之间的依赖关系，使其可以独立变更、部署或扩展
+- [[Dependency-Injection|Dependency Injection]] — 对象从外部接收其依赖项，而不是在内部自行创建的技术
+- [[E2E-Testing|E2E Testing]] — 从头到尾测试整个应用流程，模拟真实用户场景
+- [[Event-Driven|Event-Driven]] — 组件通过生产和消费事件（而非直接调用）来通信的架构
+- [[Factory-Pattern|Factory Pattern]] — 不指定具体类就能创建对象的设计模式
+- [[Feature-Flag|Feature Flag]] — 在运行时启用或禁用功能的机制，无需部署新代码
+- [[Git-Branch|Git Branch]] — 版本控制中独立的开发线路
+- [[Git-Flow|Git Flow]] — 定义特定分支角色（main、develop、feature、release、hotfix）的分支模型
+- [[GitOps|GitOps]] — 以 Git 作为基础设施和应用交付唯一事实来源的部署范式
+- [[Graceful-Degradation|Graceful Degradation]] — 系统在部分组件故障时仍能以降级功能继续运行的能力
+- [[GraphQL|GraphQL]] — 一种 API 查询语言，让客户端精确请求所需的数据
+- [[Greenfield|Greenfield]] — 从零开始的项目，没有现有代码库或之前工作的约束
+- [[Hotfix|Hotfix]] — 跳过正常发布流程，紧急部署到生产环境以解决严重问题的代码修复
+- [[Idempotent|Idempotent]] — 执行一次和执行多次产生相同结果的操作特性
+- [[Infrastructure-as-Code|Infrastructure as Code]] — 通过机器可读的配置文件（而非手动操作）来管理基础设施
+- [[Integration-Test|Integration Test]] — 测试多个组件协同工作的正确性
+- [[JWT|JWT]] — 一种紧凑、URL 安全的令牌格式，用于在各方之间安全传输 JSON 对象信息
+- [[Latency|Latency]] — 从发起请求到收到响应之间的时间延迟，通常以毫秒为单位
+- [[Load-Balancer|Load Balancer]] — 将网络流量分配到多台服务器的设备或软件
+- [[Merge|Merge]] — 将一个分支的变更合并到另一个分支
+- [[Message-Queue|Message Queue]] — 通过排队消息实现服务间异步通信的系统
+- [[Microservices|Microservices]] — 一种架构风格，将应用拆分为多个小型、可独立部署的服务，通过网络通信协作
+- [[Middleware|Middleware]] — 位于操作系统/数据库和应用之间的软件，提供消息传递、身份验证、日志记录等通用服务
+- [[Mock|Mock]] — 在测试中模拟真实依赖行为的假对象
+- [[Monolith|Monolith]] — 将所有组件紧密耦合在一起、作为一个整体统一部署的应用架构
+- [[N-1-Query|N+1 Query]] — 获取 N 条数据需要 N+1 次数据库查询（而非 1-2 次）的性能反模式
+- [[OAuth|OAuth]] — 基于令牌的认证和授权开放标准，常用于第三方登录
+- [[ORM|ORM]] — 在面向对象编程语言和关系型数据库之间进行数据类型转换的技术
+- [[Observability|Observability]] — 通过系统的外部输出（日志、指标、链路追踪）来理解系统内部状态的能力
+- [[Observer-Pattern|Observer Pattern]] — 对象（主题）维护依赖列表（观察者），状态变化时自动通知它们
+- [[Open-Source|Open Source]] — 源代码可供任何人检查、修改和增强的软件
+- [[Polling|Polling]] — 通过定期发送 HTTP 请求来反复检查更新
+- [[Profiling|Profiling]] — 分析程序运行时行为以找到性能瓶颈
+- [[REST|REST]] — 使用标准 HTTP 方法（GET、POST、PUT、DELETE）和基于资源的 URL 的 API 
+- [[Race-Condition|Race Condition]] — 系统行为取决于事件的相对时序，导致不可预测结果的缺陷
+- [[Rate-Limiting|Rate Limiting]] — 控制客户端在一段时间内可以发送的请求数量
+- [[Rebase|Rebase]] — 将一个分支的提交重放到另一个分支的基础上，创建线性历史
+- [[Refactoring|Refactoring]] — 在不改变代码外部行为的前提下，重新组织代码结构以提高可读性、降低复杂度或提升可维护性
+- [[Replication|Replication]] — 将数据从一个数据库服务器复制到一个或多个其他服务器，用于冗余和读扩展
+- [[Retry|Retry]] — 自动重试失败的操作，通常使用指数退避策略
+- [[Rollback|Rollback]] — 将系统或部署恢复到之前已知正常的状态
+- [[SLA|SLA]] — 服务提供者和客户之间关于预期服务水平的承诺（正常运行时间、响应时间等）
+- [[SQL-Injection|SQL Injection]] — 利用数据库查询构造中的安全漏洞进行代码注入的技术
+- [[SRE|SRE]] — 将软件工程实践应用于基础设施和运维问题的学科
+- [[Scaffold|Scaffold]] — 预配置的项目结构和模板代码，用于快速启动开发
+- [[Scalability|Scalability]] — 系统通过增加资源来应对更大负载的能力（水平扩展：加机器，垂直扩展：升级硬件）
+- [[Separation-of-Concerns|Separation of Concerns]] — 将程序划分为不同部分，每个部分处理独立关注点的原则
+- [[Serverless|Serverless]] — 云服务商管理基础设施、你只需按实际执行时间付费的云计算模型
+- [[Sharding|Sharding]] — 将数据分散到多个数据库实例以提高可扩展性和性能
+- [[Side-Effect|Side Effect]] — 函数调用之外可观察到的任何变化（修改外部状态、I/O 操作等）
+- [[Singleton|Singleton]] — 确保一个类只有一个实例，并提供全局访问点的设计模式
+- [[TDD|TDD]] — 先写测试再写实现代码的开发方法（红 → 绿 → 重构）
+- [[Technical-Debt|Technical Debt]] — 由于当前选择了简单/快速的方案而非更优但耗时更长的方案，而导致未来需要额外返工的隐性成本
+- [[Throughput|Throughput]] — 系统在单位时间内能处理的请求数量或操作数量
+- [[Unit-Test|Unit Test]] — 单独测试各个函数或方法以验证其正确性
+- [[WebSocket|WebSocket]] — 在单个 TCP 连接上提供全双工通信通道的协议
+- [[Webhook|Webhook]] — 由一个系统的事件触发的 HTTP 回调，向另一个系统的 URL 发送数据
+- [[XSS|XSS]] — 将恶意脚本注入到其他用户查看的网页中的安全漏洞
+- [[gRPC|gRPC]] — 使用 Protocol Buffers 序列化和 HTTP/2 传输的高性能 RPC 框架
