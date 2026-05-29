@@ -1,0 +1,651 @@
+{
+  "domain": "software-engineering",
+  "version": "0.1.0",
+  "terms": [
+    {
+      "term": "CI/CD",
+      "aliases": ["持续集成", "持续部署", "Continuous Integration", "Continuous Delivery", "Continuous Deployment", "流水线", "Pipeline"],
+      "definition": {
+        "en": "Practice of frequently integrating code changes into a shared repository, with automated build, test, and deployment",
+        "zh": "将代码变更频繁集成到共享仓库的实践，通过自动化构建、测试和部署来快速交付软件"
+      },
+      "domain": "software-engineering",
+      "related": ["pipeline", "deployment", "自动化测试", "GitHub Actions"],
+      "opposite_of": ["手动部署", "waterfall"],
+      "examples": [
+        {
+          "context": "我们用了 GitHub Actions 做 CI/CD",
+          "meaning": "项目使用 GitHub Actions 实现代码提交后自动构建、测试、部署"
+        },
+        {
+          "context": "流水线挂了",
+          "meaning": "CI/CD 流程中的某个步骤失败了，通常指自动化测试未通过"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "CI/CD = automated build-test-deploy pipeline; '流水线' literally means 'assembly line/pipeline'"
+      }
+    },
+    {
+      "term": "Refactoring",
+      "aliases": ["重构", "代码重构", "Refactor"],
+      "definition": {
+        "en": "Restructuring existing code without changing its external behavior, to improve readability, reduce complexity, or improve maintainability",
+        "zh": "在不改变代码外部行为的前提下，重新组织代码结构以提高可读性、降低复杂度或提升可维护性"
+      },
+      "domain": "software-engineering",
+      "related": ["technical-debt", "code-smell", "SOLID"],
+      "opposite_of": ["新功能开发", "feature development"],
+      "examples": [
+        {
+          "context": "这段代码太乱了，需要重构一下",
+          "meaning": "代码结构混乱，需要在不改变功能的情况下重新组织"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Refactoring = restructure code without behavior change. User says '重构' = they want cleaner code, not new features."
+      }
+    },
+    {
+      "term": "Technical Debt",
+      "aliases": ["技术债", "技术债务", "Tech Debt"],
+      "definition": {
+        "en": "The implied cost of future reworking caused by choosing an easy/quick solution now instead of a better approach that would take longer",
+        "zh": "由于当前选择了简单/快速的方案而非更优但耗时更长的方案，而导致未来需要额外返工的隐性成本"
+      },
+      "domain": "software-engineering",
+      "related": ["refactoring", "code-smell", "legacy-code"],
+      "examples": [
+        {
+          "context": "先快速实现，技术债以后再还",
+          "meaning": "先用简单方案上线，承认以后需要重构，但现在赶进度"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Technical debt = shortcuts taken now that will cost more to fix later. Like financial debt, it accumulates 'interest'."
+      }
+    },
+    {
+      "term": "Code Review",
+      "aliases": ["代码审查", "CR", "Review", "Code Review", "审代码"],
+      "definition": {
+        "en": "Systematic examination of source code by peers to find bugs, ensure quality, and share knowledge",
+        "zh": "由团队成员系统性地检查源代码，以发现缺陷、确保质量和分享知识"
+      },
+      "domain": "software-engineering",
+      "related": ["PR", "Pull Request", "merge"],
+      "examples": [
+        {
+          "context": "帮我 review 一下这个 PR",
+          "meaning": "请检查这个 Pull Request 中的代码变更是否有问题"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Code review = peer examination of code changes before merging. 'review' as verb = examine the code."
+      }
+    },
+    {
+      "term": "API",
+      "aliases": ["接口", "API接口", "Application Programming Interface", "接口文档"],
+      "definition": {
+        "en": "A set of rules and protocols that allow different software components to communicate with each other",
+        "zh": "一组规则和协议，允许不同的软件组件之间相互通信"
+      },
+      "domain": "software-engineering",
+      "related": ["REST", "GraphQL", "endpoint", "SDK"],
+      "examples": [
+        {
+          "context": "这个服务暴露了哪些 API？",
+          "meaning": "这个服务提供了哪些可调用的接口？"
+        },
+        {
+          "context": "对接一下第三方 API",
+          "meaning": "调用外部服务的接口来获取数据或执行操作"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "API = interface for programmatic access. User says '接口' = they mean API endpoint. '对接API' = integrate/call an external API."
+      }
+    },
+    {
+      "term": "Microservices",
+      "aliases": ["微服务", "微服务架构", "Microservice Architecture"],
+      "definition": {
+        "en": "Architectural style where an application is composed of small, independently deployable services that communicate over a network",
+        "zh": "一种架构风格，将应用拆分为多个小型、可独立部署的服务，通过网络通信协作"
+      },
+      "domain": "software-engineering",
+      "related": ["monolith", "单体架构", "service-mesh", "API Gateway"],
+      "opposite_of": ["monolith", "单体架构"],
+      "examples": [
+        {
+          "context": "我们要拆成微服务",
+          "meaning": "要把现有的单体应用拆分成多个独立的小服务"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Microservices = many small services vs monolith = one big app. '拆微服务' = decompose into microservices."
+      }
+    },
+    {
+      "term": "Monolith",
+      "aliases": ["单体应用", "单体架构", "Monolithic Architecture"],
+      "definition": {
+        "en": "An application built as a single, unified unit where all components are tightly coupled and deployed together",
+        "zh": "将所有组件紧密耦合在一起、作为一个整体统一部署的应用架构"
+      },
+      "domain": "software-engineering",
+      "related": ["microservices", "微服务"],
+      "opposite_of": ["microservices", "微服务"],
+      "examples": [
+        {
+          "context": "现在是个单体，后面要拆",
+          "meaning": "当前是单体架构，计划未来拆分为微服务"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Monolith = single deployable unit, opposite of microservices."
+      }
+    },
+    {
+      "term": "Scalability",
+      "aliases": ["可扩展性", "扩展性", "伸缩性", "Scale"],
+      "definition": {
+        "en": "The ability of a system to handle increased load by adding resources (horizontal: more machines, vertical: bigger machines)",
+        "zh": "系统通过增加资源来应对更大负载的能力（水平扩展：加机器，垂直扩展：升级硬件）"
+      },
+      "domain": "software-engineering",
+      "related": ["load-balancer", "horizontal-scaling", "vertical-scaling", "性能优化"],
+      "examples": [
+        {
+          "context": "这个架构能不能 scale？",
+          "meaning": "这个架构在用户量/数据量增长时能否通过加资源来应对？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Scalability = ability to grow with demand. 'scale up' = vertical (bigger machine), 'scale out' = horizontal (more machines)."
+      }
+    },
+    {
+      "term": "Latency",
+      "aliases": ["延迟", "响应时间", "响应延迟", "Response Time"],
+      "definition": {
+        "en": "The time delay between a request and its response, typically measured in milliseconds",
+        "zh": "从发起请求到收到响应之间的时间延迟，通常以毫秒为单位"
+      },
+      "domain": "software-engineering",
+      "related": ["throughput", "bandwidth", "性能优化", "p99"],
+      "opposite_of": ["throughput"],
+      "examples": [
+        {
+          "context": "接口延迟太高了",
+          "meaning": "API 响应时间太长，用户需要等很久"
+        },
+        {
+          "context": "p99 延迟 200ms",
+          "meaning": "99% 的请求在 200ms 内返回"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Latency = delay/响应时间. '延迟高' = high latency = slow response. Not to be confused with throughput (吞吐量)."
+      }
+    },
+    {
+      "term": "Throughput",
+      "aliases": ["吞吐量", "QPS", "TPS", "RPS"],
+      "definition": {
+        "en": "The number of requests or operations a system can handle per unit of time",
+        "zh": "系统在单位时间内能处理的请求数量或操作数量"
+      },
+      "domain": "software-engineering",
+      "related": ["latency", "性能优化", "并发", "load-testing"],
+      "opposite_of": ["latency"],
+      "examples": [
+        {
+          "context": "QPS 能到多少？",
+          "meaning": "每秒能处理多少次查询请求？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Throughput = requests per second (QPS/TPS/RPS). High throughput ≠ low latency."
+      }
+    },
+    {
+      "term": "Caching",
+      "aliases": ["缓存", "Cache", "缓存策略"],
+      "definition": {
+        "en": "Storing frequently accessed data in a faster storage layer to reduce access time and backend load",
+        "zh": "将频繁访问的数据存储在更快的存储层中，以减少访问时间和后端负载"
+      },
+      "domain": "software-engineering",
+      "related": ["Redis", "CDN", "cache-invalidation", "性能优化"],
+      "examples": [
+        {
+          "context": "加个缓存吧",
+          "meaning": "在数据访问路径上增加缓存层来提升性能"
+        },
+        {
+          "context": "缓存失效了",
+          "meaning": "缓存中的数据过期或被清除，需要重新从数据源获取"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Caching = storing data closer to consumer for speed. '加缓存' = add caching layer. Cache invalidation is a hard problem."
+      }
+    },
+    {
+      "term": "Middleware",
+      "aliases": ["中间件", "拦截器", "Interceptor", "Filter"],
+      "definition": {
+        "en": "Software that sits between the operating system/database and applications, providing common services like messaging, authentication, or logging",
+        "zh": "位于操作系统/数据库和应用之间的软件，提供消息传递、身份验证、日志记录等通用服务"
+      },
+      "domain": "software-engineering",
+      "related": ["API Gateway", "proxy", "interceptor"],
+      "examples": [
+        {
+          "context": "在 middleware 里加个日志",
+          "meaning": "在请求处理的中间层添加日志记录逻辑"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Middleware = software layer between request and response handler. Handles cross-cutting concerns like auth, logging, CORS."
+      }
+    },
+    {
+      "term": "ORM",
+      "aliases": ["对象关系映射", "Object-Relational Mapping"],
+      "definition": {
+        "en": "A technique that converts data between incompatible type systems in object-oriented programming languages and relational databases",
+        "zh": "在面向对象编程语言和关系型数据库之间进行数据类型转换的技术"
+      },
+      "domain": "software-engineering",
+      "related": ["database", "SQL", "Active Record", "Data Mapper"],
+      "examples": [
+        {
+          "context": "用 ORM 还是直接写 SQL？",
+          "meaning": "是用 ORM 框架操作数据库还是直接编写 SQL 语句？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "ORM = maps objects to database tables. Common: SQLAlchemy (Python), TypeORM/Prisma (JS), ActiveRecord (Ruby)."
+      }
+    },
+    {
+      "term": "Containerization",
+      "aliases": ["容器化", "Container", "容器"],
+      "definition": {
+        "en": "Packaging an application and its dependencies into a standardized unit (container) for consistent deployment across environments",
+        "zh": "将应用及其依赖打包成标准化单元（容器），以实现跨环境的一致部署"
+      },
+      "domain": "software-engineering",
+      "related": ["Docker", "Kubernetes", "orchestration", "virtual-machine"],
+      "examples": [
+        {
+          "context": "容器化部署",
+          "meaning": "将应用打包成 Docker 容器进行部署"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Containerization = package app + deps into portable container (Docker). '容器化' = containerize. K8s orchestrates containers."
+      }
+    },
+    {
+      "term": "Idempotent",
+      "aliases": ["幂等", "幂等性"],
+      "definition": {
+        "en": "An operation that produces the same result whether it's executed once or multiple times",
+        "zh": "执行一次和执行多次产生相同结果的操作特性"
+      },
+      "domain": "software-engineering",
+      "related": ["API Design", "retry", "exactly-once"],
+      "examples": [
+        {
+          "context": "这个接口要保证幂等",
+          "meaning": "重复调用这个接口不能产生副作用（比如重复扣款）"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Idempotent = safe to repeat. Critical for payment APIs, retry logic. '幂等' = idempotent."
+      }
+    },
+    {
+      "term": "Decoupling",
+      "aliases": ["解耦", "松耦合", "Loose Coupling"],
+      "definition": {
+        "en": "Reducing dependencies between components so they can be changed, deployed, or scaled independently",
+        "zh": "减少组件之间的依赖关系，使其可以独立变更、部署或扩展"
+      },
+      "domain": "software-engineering",
+      "related": ["coupling", "cohesion", "SOLID", "microservices"],
+      "opposite_of": ["coupling", "紧耦合"],
+      "examples": [
+        {
+          "context": "这两个模块耦合太紧了，需要解耦",
+          "meaning": "两个模块之间依赖过深，需要减少相互依赖"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Decoupling = reduce inter-dependencies. '解耦' = decouple. Opposite of '耦合' (coupling)."
+      }
+    },
+    {
+      "term": "Hotfix",
+      "aliases": ["热修复", "紧急修复", "补丁"],
+      "definition": {
+        "en": "An urgent code fix deployed to production to resolve a critical issue, bypassing the normal release cycle",
+        "zh": "跳过正常发布流程，紧急部署到生产环境以解决严重问题的代码修复"
+      },
+      "domain": "software-engineering",
+      "related": ["incident", "rollback", "deployment"],
+      "examples": [
+        {
+          "context": "线上出 bug 了，赶紧 hotfix",
+          "meaning": "生产环境有严重问题，需要紧急修复并部署"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Hotfix = urgent production fix, bypasses normal cycle. '热修复' or '紧急修复'."
+      }
+    },
+    {
+      "term": "Rollback",
+      "aliases": ["回滚", "回退", "版本回退"],
+      "definition": {
+        "en": "Reverting a system or deployment to a previous known-good state",
+        "zh": "将系统或部署恢复到之前已知正常的状态"
+      },
+      "domain": "software-engineering",
+      "related": ["deployment", "hotfix", "version-control"],
+      "examples": [
+        {
+          "context": "新版本有问题，先回滚",
+          "meaning": "最新部署有 bug，先恢复到上一个稳定版本"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Rollback = revert to previous version. '回滚' = rollback. Common when deployment breaks things."
+      }
+    },
+    {
+      "term": "Scaffold",
+      "aliases": ["脚手架", "项目脚手架", "Boilerplate"],
+      "definition": {
+        "en": "Pre-configured project structure and boilerplate code generated to quickly start development",
+        "zh": "预配置的项目结构和模板代码，用于快速启动开发"
+      },
+      "domain": "software-engineering",
+      "related": ["template", "boilerplate", "CLI"],
+      "examples": [
+        {
+          "context": "用 create-react-app 脚手架创建项目",
+          "meaning": "使用 CLI 工具快速生成 React 项目的初始结构"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Scaffold/脚手架 = auto-generated project starter. Tools: create-react-app, vue-cli, django-admin startproject."
+      }
+    },
+    {
+      "term": "Dependency Injection",
+      "aliases": ["依赖注入", "DI", "IoC"],
+      "definition": {
+        "en": "A technique where an object receives its dependencies from external sources rather than creating them internally",
+        "zh": "对象从外部接收其依赖项，而不是在内部自行创建的技术"
+      },
+      "domain": "software-engineering",
+      "related": ["SOLID", "inversion-of-control", "design-patterns"],
+      "examples": [
+        {
+          "context": "用依赖注入来解耦",
+          "meaning": "通过外部注入依赖而不是内部创建，来降低组件间的耦合度"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "DI = don't create dependencies yourself, receive them from outside. Promotes testability and loose coupling."
+      }
+    },
+    {
+      "term": "Race Condition",
+      "aliases": ["竞态条件", "竞态", "并发竞争"],
+      "definition": {
+        "en": "A bug where the behavior of a system depends on the relative timing of events, leading to unpredictable results",
+        "zh": "系统行为取决于事件的相对时序，导致不可预测结果的缺陷"
+      },
+      "domain": "software-engineering",
+      "related": ["concurrency", "thread-safety", "mutex", "deadlock"],
+      "examples": [
+        {
+          "context": "这里有竞态问题",
+          "meaning": "并发执行时存在时序相关的 bug，可能导致数据不一致"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Race condition = timing-dependent bug in concurrent code. '竞态' = race condition. Fix with locks/mutexes/atomic ops."
+      }
+    },
+    {
+      "term": "Convention over Configuration",
+      "aliases": ["约定优于配置", "约定大于配置", "CoC"],
+      "definition": {
+        "en": "A design paradigm that provides sensible defaults so developers only need to specify unconventional aspects of the application",
+        "zh": "提供合理默认值的设计范式，开发者只需指定非常规的部分"
+      },
+      "domain": "software-engineering",
+      "related": ["framework", "Spring Boot", "Rails", "DRY"],
+      "examples": [
+        {
+          "context": "Spring Boot 就是约定优于配置",
+          "meaning": "框架提供了大量默认约定，减少了显式配置的工作量"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Convention over Configuration = sensible defaults reduce boilerplate config. Key philosophy of Rails, Spring Boot."
+      }
+    },
+    {
+      "term": "Separation of Concerns",
+      "aliases": ["关注点分离", "SoC"],
+      "definition": {
+        "en": "The principle of dividing a program into distinct sections, each addressing a separate concern",
+        "zh": "将程序划分为不同部分，每个部分处理独立关注点的原则"
+      },
+      "domain": "software-engineering",
+      "related": ["SOLID", "MVC", "modularity", "single-responsibility"],
+      "examples": [
+        {
+          "context": "前端和后端要关注点分离",
+          "meaning": "前端负责展示逻辑，后端负责业务逻辑，不要混在一起"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Separation of Concerns = each part of code does one thing. '关注点分离' = SoC. Foundation of MVC, layered architecture."
+      }
+    },
+    {
+      "term": "Side Effect",
+      "aliases": ["副作用", "Side Effect"],
+      "definition": {
+        "en": "Any observable change outside the function being called (modifying external state, I/O, etc.)",
+        "zh": "函数调用之外可观察到的任何变化（修改外部状态、I/O 操作等）"
+      },
+      "domain": "software-engineering",
+      "related": ["pure-function", "functional-programming", "idempotent"],
+      "opposite_of": ["pure-function", "纯函数"],
+      "examples": [
+        {
+          "context": "这个函数有副作用",
+          "meaning": "函数除了返回值外，还修改了外部状态（如全局变量、数据库等）"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Side effect = function changes things outside itself. Pure functions have no side effects. '副作用' = side effect."
+      }
+    },
+    {
+      "term": "Boilerplate",
+      "aliases": ["模板代码", "样板代码", "重复代码"],
+      "definition": {
+        "en": "Code that is repeated with little or no alteration across projects or within a project",
+        "zh": "在项目间或项目内几乎不加修改就重复使用的代码"
+      },
+      "domain": "software-engineering",
+      "related": ["scaffold", "template", "DRY"],
+      "examples": [
+        {
+          "context": "太多 boilerplate 了",
+          "meaning": "有大量重复的模板代码，应该抽象或用工具生成"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Boilerplate = repetitive code you always write. '模板代码'/'样板代码'. Reduce with frameworks, code generation."
+      }
+    },
+    {
+      "term": "Greenfield",
+      "aliases": ["绿地项目", "全新项目", "从零开始"],
+      "definition": {
+        "en": "A project started from scratch with no existing codebase or constraints from prior work",
+        "zh": "从零开始的项目，没有现有代码库或之前工作的约束"
+      },
+      "domain": "software-engineering",
+      "related": ["brownfield", "legacy-code"],
+      "opposite_of": ["brownfield", "遗留系统"],
+      "examples": [
+        {
+          "context": "这是个绿地项目",
+          "meaning": "全新项目，可以从头选择技术栈和架构"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Greenfield = start from nothing. Brownfield = work within existing system. '绿地'/'从零开始' = greenfield."
+      }
+    },
+    {
+      "term": "Feature Flag",
+      "aliases": ["功能开关", "特性开关", "Feature Toggle", "功能旗标"],
+      "definition": {
+        "en": "A mechanism to enable or disable features at runtime without deploying new code",
+        "zh": "在运行时启用或禁用功能的机制，无需部署新代码"
+      },
+      "domain": "software-engineering",
+      "related": ["deployment", "A/B testing", "canary-release"],
+      "examples": [
+        {
+          "context": "用 feature flag 控制新功能的灰度",
+          "meaning": "通过功能开关逐步向用户开放新功能"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Feature flag = runtime on/off switch for features. '功能开关'. Enables gradual rollout, A/B testing."
+      }
+    },
+    {
+      "term": "Observability",
+      "aliases": ["可观测性", "可观测", "Telemetry"],
+      "definition": {
+        "en": "The ability to understand the internal state of a system from its external outputs (logs, metrics, traces)",
+        "zh": "通过系统的外部输出（日志、指标、链路追踪）来理解系统内部状态的能力"
+      },
+      "domain": "software-engineering",
+      "related": ["logging", "monitoring", "tracing", "metrics"],
+      "examples": [
+        {
+          "context": "服务可观测性不够",
+          "meaning": "缺乏足够的日志、指标和追踪来排查问题"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Observability = understand system from outside. Three pillars: logs, metrics, traces. '可观测性'."
+      }
+    },
+    {
+      "term": "SLA",
+      "aliases": ["服务等级协议", "Service Level Agreement"],
+      "definition": {
+        "en": "A commitment between a service provider and client defining the expected level of service (uptime, response time, etc.)",
+        "zh": "服务提供者和客户之间关于预期服务水平的承诺（正常运行时间、响应时间等）"
+      },
+      "domain": "software-engineering",
+      "related": ["SLO", "SLI", "uptime", "availability"],
+      "examples": [
+        {
+          "context": "我们的 SLA 是 99.9%",
+          "meaning": "承诺服务年可用性达到 99.9%（约 8.76 小时/年停机）"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "SLA = service level commitment. 99.9% = 'three nines'. SLO is internal target, SLA is external promise."
+      }
+    },
+    {
+      "term": "E2E Testing",
+      "aliases": ["端到端测试", "End-to-End Testing", "E2E"],
+      "definition": {
+        "en": "Testing the entire application flow from start to finish, simulating real user scenarios",
+        "zh": "从头到尾测试整个应用流程，模拟真实用户场景"
+      },
+      "domain": "software-engineering",
+      "related": ["unit-testing", "integration-testing", "testing-pyramid", "Cypress", "Playwright"],
+      "examples": [
+        {
+          "context": "加个 E2E 测试覆盖核心流程",
+          "meaning": "编写端到端测试来验证用户核心操作路径的正确性"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "E2E testing = test full user flow from UI to DB. Tools: Cypress, Playwright, Selenium. '端到端测试'."
+      }
+    },
+    {
+      "term": "Caching Strategy",
+      "aliases": ["缓存策略", "Cache Aside", "Read Through", "Write Through", "Write Behind"],
+      "definition": {
+        "en": "The approach for when and how to populate, invalidate, and update cached data",
+        "zh": "关于何时以及如何填充、失效和更新缓存数据的方法"
+      },
+      "domain": "software-engineering",
+      "related": ["caching", "Redis", "cache-invalidation", "性能优化"],
+      "examples": [
+        {
+          "context": "用 Cache Aside 模式",
+          "meaning": "应用先查缓存，没有再查数据库，然后更新缓存"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Cache Aside = app manages cache. Read/Write Through = cache manages itself. '缓存策略' = caching strategy."
+      }
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "domain": "product",
+  "version": "0.1.0",
+  "terms": [
+    {
+      "term": "MVP",
+      "aliases": ["最小可行产品", "最小可用产品", "Minimum Viable Product"],
+      "definition": {
+        "en": "The simplest version of a product that can be released to test core hypotheses and gather user feedback",
+        "zh": "产品最简单的版本，可以发布以测试核心假设并收集用户反馈"
+      },
+      "domain": "product",
+      "related": ["prototype", "PMF", "lean-startup"],
+      "examples": [
+        {
+          "context": "先做 MVP 验证一下",
+          "meaning": "先做最简单的版本发布出去，看看用户是否真的需要这个功能"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "MVP = minimum version to test if users want it. '最小可行产品'. NOT prototype (原型) - MVP is shipped to real users."
+      }
+    },
+    {
+      "term": "PMF",
+      "aliases": ["产品市场契合", "Product-Market Fit"],
+      "definition": {
+        "en": "The degree to which a product satisfies strong market demand — the moment you realize you can't keep up with demand",
+        "zh": "产品满足强烈市场需求的程度——当你发现无法跟上需求增长的那一刻"
+      },
+      "domain": "product",
+      "related": ["MVP", "product-market-fit", "growth"],
+      "examples": [
+        {
+          "context": "还没找到 PMF",
+          "meaning": "产品还没找到足够多的愿意付费/持续使用的用户群体"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "PMF = product fits market need. '产品市场契合'. Pre-PMF = searching for demand. Post-PMF = scaling what works."
+      }
+    },
+    {
+      "term": "User Story",
+      "aliases": ["用户故事", "User Story"],
+      "definition": {
+        "en": "A short, simple description of a feature told from the perspective of the end user (As a [user], I want [goal] so that [benefit])",
+        "zh": "从最终用户角度描述功能的简短叙述（作为[用户]，我想要[目标]，以便[获得价值]）"
+      },
+      "domain": "product",
+      "related": ["acceptance-criteria", "agile", "backlog"],
+      "examples": [
+        {
+          "context": "写个用户故事",
+          "meaning": "用「作为X，我想要Y，以便Z」的格式描述需求"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "User story = feature described from user perspective. Format: 'As a [role], I want [feature], so that [benefit]'."
+      }
+    },
+    {
+      "term": "Scoping",
+      "aliases": ["范围界定", "需求范围", "Scope"],
+      "definition": {
+        "en": "Defining the boundaries of what will and won't be included in a project or release",
+        "zh": "定义项目或发布中包含和不包含内容的边界"
+      },
+      "domain": "product",
+      "related": ["requirements", "scope-creep", "backlog"],
+      "examples": [
+        {
+          "context": "先 scope 一下",
+          "meaning": "先确定这次要做哪些内容、不做哪些内容"
+        },
+        {
+          "context": "scope creep 了",
+          "meaning": "需求范围不知不觉扩大了，越来越多功能被加进来"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Scoping = defining what's in/out of a project. 'Scope creep' = scope gradually expanding. '范围界定'."
+      }
+    },
+    {
+      "term": "Stakeholder",
+      "aliases": ["利益相关者", "干系人", "相关方"],
+      "definition": {
+        "en": "Anyone who has an interest in or is affected by the project's outcome (users, investors, team, management)",
+        "zh": "对项目结果有兴趣或受其影响的人（用户、投资人、团队、管理层）"
+      },
+      "domain": "product",
+      "related": ["requirements", "alignment", "communication"],
+      "examples": [
+        {
+          "context": "需要对齐一下 stakeholder",
+          "meaning": "需要跟所有相关方确认目标和期望是否一致"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Stakeholder = anyone affected by or interested in the project. '利益相关者'/'干系人'. '对齐stakeholder' = align expectations."
+      }
+    },
+    {
+      "term": "AB Testing",
+      "aliases": ["A/B测试", "分流测试", "对比测试"],
+      "definition": {
+        "en": "An experiment where two versions (A and B) are compared to see which performs better on a specific metric",
+        "zh": "对比两个版本（A 和 B）以确定哪个在特定指标上表现更好的实验"
+      },
+      "domain": "product",
+      "related": ["experimentation", "conversion-rate", "feature-flag"],
+      "examples": [
+        {
+          "context": "做个 AB 测试看看哪个方案好",
+          "meaning": "同时上线两个版本，用数据决定最终用哪个"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "A/B testing = compare two versions with real users. 'A/B测试'. Needs enough traffic for statistical significance."
+      }
+    },
+    {
+      "term": "Conversion Rate",
+      "aliases": ["转化率", "转化", "Conversion"],
+      "definition": {
+        "en": "The percentage of users who complete a desired action (purchase, sign up, etc.) out of total visitors",
+        "zh": "完成期望操作（购买、注册等）的用户占总访问者的百分比"
+      },
+      "domain": "product",
+      "related": ["funnel", "A/B testing", "engagement"],
+      "examples": [
+        {
+          "context": "转化率太低了",
+          "meaning": "来访问的人多，但真正注册/购买的人太少"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Conversion rate = % of visitors who do what you want. '转化率'. Track by funnel stage."
+      }
+    },
+    {
+      "term": "Pain Point",
+      "aliases": ["痛点", "用户痛点", "需求痛点"],
+      "definition": {
+        "en": "A specific problem or frustration that users experience, representing an opportunity for a product solution",
+        "zh": "用户遇到的具体问题或挫败感，代表了产品解决方案的机会"
+      },
+      "domain": "product",
+      "related": ["user-research", "jobs-to-be-done", "value-proposition"],
+      "examples": [
+        {
+          "context": "用户痛点是什么？",
+          "meaning": "用户在什么场景下感到最痛苦/不方便？这就是产品要解决的问题"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "zh",
+        "prompt_fragment": "Pain point = what frustrates users. '痛点'. Product solves pain points. Find them through user research."
+      }
+    },
+    {
+      "term": "Value Proposition",
+      "aliases": ["价值主张", "核心价值", "Value Prop"],
+      "definition": {
+        "en": "A clear statement of the unique value a product delivers to its target users and why they should choose it",
+        "zh": "清晰阐述产品为目标用户提供的独特价值，以及用户为什么应该选择它"
+      },
+      "domain": "product",
+      "related": ["pain-point", "differentiation", "positioning"],
+      "examples": [
+        {
+          "context": "我们的价值主张是什么？",
+          "meaning": "用户为什么要用我们的产品而不是竞品？我们提供什么独特价值？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Value proposition = why users should care. '价值主张'. Answer: what unique value do you deliver?"
+      }
+    },
+    {
+      "term": "Funnel",
+      "aliases": ["漏斗", "转化漏斗", "用户漏斗", "Conversion Funnel"],
+      "definition": {
+        "en": "A model representing the stages a user goes through from awareness to conversion, where drop-off occurs at each stage",
+        "zh": "描述用户从认知到转化各阶段的模型，每个阶段都有用户流失"
+      },
+      "domain": "product",
+      "related": ["conversion-rate", "drop-off", "acquisition"],
+      "examples": [
+        {
+          "context": "看看漏斗哪一步流失最多",
+          "meaning": "分析转化流程中哪个环节的用户流失率最高"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Funnel = stages from awareness to conversion. '漏斗'. Users drop off at each stage. Find biggest drop-off."
+      }
+    },
+    {
+      "term": "Growth Hacking",
+      "aliases": ["增长黑客", "增长策略", "Growth"],
+      "definition": {
+        "en": "A strategy focused on rapid experimentation across marketing channels and product development to find the most effective ways to grow",
+        "zh": "通过在营销渠道和产品开发上快速实验，找到最有效增长方式的策略"
+      },
+      "domain": "product",
+      "related": ["acquisition", "retention", "viral-loop"],
+      "examples": [
+        {
+          "context": "需要一些增长黑客的手段",
+          "meaning": "需要通过创意和数据驱动的方法来快速增长用户"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Growth hacking = rapid experimentation for growth. '增长黑客'. Data-driven, creative, often low-cost tactics."
+      }
+    },
+    {
+      "term": "Retention",
+      "aliases": ["留存", "用户留存", "留存率", "Retention Rate"],
+      "definition": {
+        "en": "The percentage of users who continue using a product over a given time period",
+        "zh": "在给定时间段内继续使用产品的用户百分比"
+      },
+      "domain": "product",
+      "related": ["churn", "engagement", "DAU", "MAU"],
+      "opposite_of": ["churn", "流失"],
+      "examples": [
+        {
+          "context": "次日留存多少？",
+          "meaning": "用户第一天使用后，第二天还有多少人回来使用？"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Retention = users coming back. '留存'. Key metrics: D1 (next day), D7, D30 retention rates."
+      }
+    },
+    {
+      "term": "Churn",
+      "aliases": ["流失", "用户流失", "Churn Rate", "流失率"],
+      "definition": {
+        "en": "The percentage of users who stop using a product over a given time period",
+        "zh": "在给定时间段内停止使用产品的用户百分比"
+      },
+      "domain": "product",
+      "related": ["retention", "engagement", "customer-lifetime-value"],
+      "opposite_of": ["retention", "留存"],
+      "examples": [
+        {
+          "context": "这个月 churn 太高了",
+          "meaning": "这个月流失的用户太多了，需要分析原因"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Churn = users leaving. '流失'. Opposite of retention. High churn = product not keeping users."
+      }
+    },
+    {
+      "term": "Backlog",
+      "aliases": ["待办列表", "需求池", "Backlog"],
+      "definition": {
+        "en": "A prioritized list of features, bugs, and tasks to be worked on, maintained by the product owner",
+        "zh": "由产品负责人维护的、按优先级排列的功能、缺陷和任务列表"
+      },
+      "domain": "product",
+      "related": ["prioritization", "sprint", "agile", "scrum"],
+      "examples": [
+        {
+          "context": "加到 backlog 里",
+          "meaning": "先记下来放到需求池里，后面再排优先级"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Backlog = prioritized to-do list. '待办列表'/'需求池'. Managed by product owner in agile/scrum."
+      }
+    },
+    {
+      "term": "Prioritization",
+      "aliases": ["优先级排序", "排优先级", "需求优先级"],
+      "definition": {
+        "en": "The process of deciding the order in which features or tasks should be worked on based on value, effort, and urgency",
+        "zh": "根据价值、工作量和紧迫度决定功能或任务的开发顺序"
+      },
+      "domain": "product",
+      "related": ["backlog", "RICE", "MoSCoW", "impact-effort"],
+      "examples": [
+        {
+          "context": "先排一下优先级",
+          "meaning": "评估各个需求的重要程度，决定先做哪个后做哪个"
+        }
+      ],
+      "model_hints": {
+        "preferred_lang": "en",
+        "prompt_fragment": "Prioritization = decide what to build first. Methods: RICE, MoSCoW, Impact/Effort matrix. '排优先级'."
+      }
+    }
+  ]
+}

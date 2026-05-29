@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/siok/vibe-glossary/schema/term.schema.json",
+  "title": "Vibe Glossary Term",
+  "description": "A single term entry in the vibe glossary knowledge base",
+  "type": "object",
+  "required": ["term", "definition", "domain"],
+  "properties": {
+    "term": {
+      "type": "string",
+      "description": "The primary term or phrase"
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternative names, abbreviations, translations"
+    },
+    "definition": {
+      "type": "object",
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      },
+      "required": ["en"],
+      "additionalProperties": { "type": "string" },
+      "description": "Definitions in multiple languages"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Which domain this term belongs to (must match directory name under domains/)"
+    },
+    "related": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Related terms, can be cross-domain (format: 'term' or 'domain/term')"
+    },
+    "opposite_of": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Terms that are opposite or commonly contrasted"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "context": { "type": "string", "description": "Example sentence or usage" },
+          "meaning": { "type": "string", "description": "What it actually means in plain language" }
+        },
+        "required": ["context", "meaning"]
+      },
+      "description": "Real-world usage examples with explanations"
+    },
+    "model_hints": {
+      "type": "object",
+      "properties": {
+        "preferred_lang": {
+          "type": "string",
+          "enum": ["en", "zh", "auto"],
+          "description": "Preferred language when communicating with LLMs about this term"
+        },
+        "prompt_fragment": {
+          "type": "string",
+          "description": "A hint for the model on how to interpret or translate this term"
+        }
+      },
+      "description": "Hints for LLM-based translation and vibe coding"
+    }
+  },
+  "additionalProperties": false
+}

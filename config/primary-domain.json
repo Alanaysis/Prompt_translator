@@ -1,0 +1,6 @@
+{
+  "primary": "software-engineering",
+  "fallback": "natural-language",
+  "context": "当前项目主要技术栈为 Python + React，产品方向为 SaaS 工具",
+  "notes": "翻译时优先匹配主领域术语，找不到再 fallback 到自然语言领域"
+}
