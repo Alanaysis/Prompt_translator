@@ -28,6 +28,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "MVP = minimum version to test if users want it. '最小可行产品'. NOT prototype (原型) - MVP is shipped to real users."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Scaffold",
+            "note": "快速搭建可运行的最小版本"
+          }
+        ]
       }
     },
     {
@@ -82,6 +90,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "User story = feature described from user perspective. Format: 'As a [role], I want [feature], so that [benefit]'."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "API",
+            "note": "用户故事最终落实为接口设计"
+          }
+        ]
       }
     },
     {
@@ -114,6 +130,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Scoping = defining what's in/out of a project. 'Scope creep' = scope gradually expanding. '范围界定'."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Scaffold",
+            "note": "范围界定后用脚手架快速启动"
+          }
+        ]
       }
     },
     {
@@ -170,6 +194,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "A/B testing = compare two versions with real users. 'A/B测试'. Needs enough traffic for statistical significance."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Feature Flag",
+            "note": "功能开关是实现 A/B 测试的技术手段"
+          }
+        ]
       }
     },
     {
@@ -198,6 +230,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Conversion rate = % of visitors who do what you want. '转化率'. Track by funnel stage."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Feature Flag",
+            "note": "通过功能开关做 A/B 测试优化转化率"
+          }
+        ]
       }
     },
     {
@@ -226,6 +266,14 @@
       "model_hints": {
         "preferred_lang": "zh",
         "prompt_fragment": "Pain point = what frustrates users. '痛点'. Product solves pain points. Find them through user research."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "API",
+            "note": "痛点通常通过技术方案（接口/服务）来解决"
+          }
+        ]
       }
     },
     {
@@ -283,6 +331,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Funnel = stages from awareness to conversion. '漏斗'. Users drop off at each stage. Find biggest drop-off."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Observability",
+            "note": "漏斗分析需要可观测性支持"
+          }
+        ]
       }
     },
     {
@@ -311,6 +367,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Growth hacking = rapid experimentation for growth. '增长黑客'. Data-driven, creative, often low-cost tactics."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Feature Flag",
+            "note": "增长实验依赖功能开关"
+          }
+        ]
       }
     },
     {
@@ -345,6 +409,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Retention = users coming back. '留存'. Key metrics: D1 (next day), D7, D30 retention rates."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Caching",
+            "note": "缓存提升性能从而提高留存"
+          }
+        ]
       }
     },
     {
@@ -378,6 +450,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Churn = users leaving. '流失'. Opposite of retention. High churn = product not keeping users."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Caching",
+            "note": "降低流失需要缓存优化性能"
+          }
+        ]
       }
     },
     {
@@ -407,6 +487,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Backlog = prioritized to-do list. '待办列表'/'需求池'. Managed by product owner in agile/scrum."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "CI/CD",
+            "note": "待办事项通过 CI/CD 流程交付"
+          }
+        ]
       }
     },
     {
@@ -436,6 +524,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Prioritization = decide what to build first. Methods: RICE, MoSCoW, Impact/Effort matrix. '排优先级'."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Technical Debt",
+            "note": "优先级排序需要权衡技术债"
+          }
+        ]
       }
     },
     {
@@ -686,6 +782,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Roadmap = high-level product plan over time. '路线图'. Themes/goals, not specific features. Adjusts as you learn."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "CI/CD",
+            "note": "路线图通过持续交付来实现"
+          }
+        ]
       }
     },
     {
@@ -850,6 +954,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "NPS = Net Promoter Score (0-10). '净推荐值'. Promoters (9-10) - Detractors (0-6) = NPS. >50 is excellent."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "E2E Testing",
+            "note": "NPS 反映端到端体验质量"
+          }
+        ]
       }
     },
     {
@@ -877,6 +989,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Bounce Rate = % visitors who leave after one page. '跳出率'. High = landing page not engaging. Improve: better CTA, faster load."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Latency",
+            "note": "跳出率高通常与延迟有关"
+          }
+        ]
       }
     },
     {
@@ -905,6 +1025,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Onboarding = guide new users to value. '新手引导'. Key moment: first 'aha' experience. Reduce time-to-value."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Scaffold",
+            "note": "新手引导需要脚手架搭建的原型"
+          }
+        ]
       }
     },
     {
@@ -988,6 +1116,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Viral Loop = users invite users. '病毒循环'. K-factor > 1 = viral growth. Examples: referral rewards, shareable content."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Webhook",
+            "note": "病毒传播需要回调通知机制"
+          }
+        ]
       }
     },
     {
@@ -1015,6 +1151,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "PLG = product drives growth, not sales team. '产品驱动增长'. Examples: Slack, Notion, Figma. Free tier → upgrade."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Observability",
+            "note": "产品驱动增长需要可观测性来追踪指标"
+          }
+        ]
       }
     },
     {
@@ -1042,6 +1186,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Freemium = free + premium. '免费增值'. Free tier for acquisition, paid tier for revenue. Key: free must be valuable enough."
+      },
+      "cross_domain": {
+        "software-engineering": [
+          {
+            "term": "Feature Flag",
+            "note": "功能开关控制免费/付费功能边界"
+          }
+        ]
       }
     },
     {

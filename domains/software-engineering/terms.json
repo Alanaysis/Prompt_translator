@@ -41,6 +41,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "CI/CD = automated build-test-deploy pipeline; '流水线' literally means 'assembly line/pipeline'"
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Roadmap",
+            "note": "持续交付支撑路线图落地"
+          }
+        ]
       }
     },
     {
@@ -101,6 +109,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Technical debt = shortcuts taken now that will cost more to fix later. Like financial debt, it accumulates 'interest'."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Prioritization",
+            "note": "技术债影响优先级排序"
+          }
+        ]
       }
     },
     {
@@ -165,6 +181,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "API = interface for programmatic access. User says '接口' = they mean API endpoint. '对接API' = integrate/call an external API."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "User Story",
+            "note": "接口服务于用户故事"
+          }
+        ]
       }
     },
     {
@@ -296,6 +320,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Latency = delay/响应时间. '延迟高' = high latency = slow response. Not to be confused with throughput (吞吐量)."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Bounce Rate",
+            "note": "延迟高导致跳出率高"
+          }
+        ]
       }
     },
     {
@@ -362,6 +394,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Caching = storing data closer to consumer for speed. '加缓存' = add caching layer. Cache invalidation is a hard problem."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Retention",
+            "note": "缓存提升性能从而提高留存"
+          }
+        ]
       }
     },
     {
@@ -508,6 +548,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Decoupling = reduce inter-dependencies. '解耦' = decouple. Opposite of '耦合' (coupling)."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Scoping",
+            "note": "解耦让范围界定更灵活"
+          }
+        ]
       }
     },
     {
@@ -564,6 +612,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Rollback = revert to previous version. '回滚' = rollback. Common when deployment breaks things."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Churn",
+            "note": "快速回滚减少用户流失"
+          }
+        ]
       }
     },
     {
@@ -592,6 +648,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Scaffold/脚手架 = auto-generated project starter. Tools: create-react-app, vue-cli, django-admin startproject."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "MVP",
+            "note": "脚手架用于快速搭建 MVP"
+          }
+        ]
       }
     },
     {
@@ -825,6 +889,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Feature flag = runtime on/off switch for features. '功能开关'. Enables gradual rollout, A/B testing."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "AB Testing",
+            "note": "功能开关是 A/B 测试的技术实现"
+          }
+        ]
       }
     },
     {
@@ -854,6 +926,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Observability = understand system from outside. Three pillars: logs, metrics, traces. '可观测性'."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Funnel",
+            "note": "可观测性支撑漏斗分析"
+          }
+        ]
       }
     },
     {
@@ -912,6 +992,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "E2E testing = test full user flow from UI to DB. Tools: Cypress, Playwright, Selenium. '端到端测试'."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "NPS",
+            "note": "端到端测试保障用户体验"
+          }
+        ]
       }
     },
     {
@@ -1394,6 +1482,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Unit test = test individual functions in isolation. '单元测试'. Fast, cheap, many. Testing pyramid base."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Pain Point",
+            "note": "单元测试预防痛点（bug）"
+          }
+        ]
       }
     },
     {
@@ -1561,6 +1657,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Circuit Breaker = stop calling failing service. '熔断'. States: closed → open → half-open. Prevents cascade failures."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Churn",
+            "note": "熔断防止系统崩溃导致用户流失"
+          }
+        ]
       }
     },
     {
@@ -2081,6 +2185,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Webhook = HTTP callback on event. '回调'/'钩子'. Push-based, not pull. Like a reverse API call."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Viral Loop",
+            "note": "回调通知支撑病毒传播机制"
+          }
+        ]
       }
     },
     {
@@ -2272,6 +2384,14 @@
       "model_hints": {
         "preferred_lang": "en",
         "prompt_fragment": "Rate Limiting = cap requests per time period. '限流'. Algorithms: token bucket, sliding window. Return 429 when exceeded."
+      },
+      "cross_domain": {
+        "product": [
+          {
+            "term": "Conversion Rate",
+            "note": "限流保障服务稳定，维护转化率"
+          }
+        ]
       }
     },
     {
